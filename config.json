@@ -310,7 +310,7 @@
       {
         "institution": "University of the West of Scotland",
         "qualification": "Master's Degree, Information Technology with Data Analytics",
-        "date": "Jan 2026 – Jan 2027",
+        "date": "Jan 2026 – Present",
         "status": "Currently studying",
         "details": [
           "Currently pursuing postgraduate study in information technology with a data analytics specialization.",
@@ -377,7 +377,7 @@
     ]
   },
   "cv": {
-    "title": "Curriculum Vitae",
+    "title": "View or Download My CV",
     "description": "UK-based and open to Data Analyst opportunities.",
     "file": "assets/cv/Sova_Kushwaha_Data_Analyst_CV.pdf",
     "download_label": "Download CV",
