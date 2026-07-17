@@ -47,6 +47,16 @@ config.experience?.jobs?.forEach((job, index) => {
   checkAsset(`experience.jobs[${index}].logo_dark`, job.logo_dark);
 });
 
+if (config.features?.education && !Array.isArray(config.education?.items)) {
+  errors.push('education.items must be an array when education is enabled');
+}
+
+config.education?.items?.forEach((item, index) => {
+  requireString(`education.items[${index}].institution`, item.institution);
+  requireString(`education.items[${index}].qualification`, item.qualification);
+  requireString(`education.items[${index}].date`, item.date);
+});
+
 if (config.github_projects?.mode && !['featured', 'stars', 'feed'].includes(config.github_projects.mode)) {
   errors.push('github_projects.mode must be one of: featured, stars, feed');
 }

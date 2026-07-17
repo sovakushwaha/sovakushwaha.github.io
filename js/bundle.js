@@ -46,6 +46,7 @@ class ConfigManager {
             about: 'About',
             projects: this.config?.projects?.title || 'Projects',
             experience: this.config?.experience?.title || 'Experience',
+            education: this.config?.education?.title || 'Education',
             skills: this.config?.skills?.title || 'Skills',
             github_projects: this.config?.github_projects?.title || 'GitHub Projects'
         };
@@ -61,6 +62,8 @@ class ConfigManager {
                 return this.config?.projects?.items?.length > 0;
             case 'experience':
                 return this.config?.experience?.jobs?.length > 0;
+            case 'education':
+                return this.config?.education?.items?.length > 0;
             case 'skills':
                 return this.config?.skills?.categories?.length > 0;
             case 'github_projects':
@@ -262,6 +265,7 @@ class SectionManager {
             passion: true,
             projects: true,
             experience: true,
+            education: true,
             skills: true,
             github_projects: true,
             ...config.features
@@ -271,6 +275,7 @@ class SectionManager {
         this.toggleSection('passion', features.passion);
         this.toggleSection('projects', features.projects);
         this.toggleSection('experience', features.experience);
+        this.toggleSection('education', features.education);
         this.toggleSection('skills', features.skills);
         this.toggleSection('projects-on-github', features.github_projects);
 
@@ -288,6 +293,10 @@ class SectionManager {
 
         if (features.experience) {
             this.updateExperienceSection(config);
+        }
+
+        if (features.education) {
+            this.updateEducationSection(config);
         }
 
         if (features.skills) {
@@ -556,6 +565,56 @@ class SectionManager {
         `;
 
         return experienceItem;
+    }
+
+    updateEducationSection(config) {
+        const section = document.querySelector('.education');
+        const timeline = section?.querySelector('.education-timeline');
+        if (!section || !timeline) return;
+
+        const titleElement = section.querySelector('h2');
+        if (titleElement) {
+            titleElement.textContent = this.configManager.getSectionTitle('education');
+        }
+
+        timeline.replaceChildren();
+        const fragment = document.createDocumentFragment();
+
+        (config.education?.items || []).forEach(item => {
+            fragment.appendChild(this.createEducationItem(item));
+        });
+
+        timeline.appendChild(fragment);
+    }
+
+    createEducationItem(item) {
+        const educationItem = document.createElement('article');
+        educationItem.className = 'education-item';
+
+        const institution = this.escapeHtml(item.institution || 'Institution');
+        const qualification = this.escapeHtml(item.qualification || 'Qualification');
+        const date = this.escapeHtml(item.date || '');
+        const status = item.status
+            ? `<span class="education-status">${this.escapeHtml(item.status)}</span>`
+            : '';
+        const details = this.listItems(item.details || []);
+
+        educationItem.innerHTML = `
+            <div class="education-marker" aria-hidden="true"></div>
+            <div class="education-card">
+                <div class="education-heading">
+                    <div>
+                        <h3>${institution}</h3>
+                        <p class="education-qualification">${qualification}</p>
+                    </div>
+                    ${status}
+                </div>
+                ${date ? `<p class="education-date">${date}</p>` : ''}
+                ${details ? `<ul>${details}</ul>` : ''}
+            </div>
+        `;
+
+        return educationItem;
     }
 
     updateSkillsSection(config) {
@@ -1036,6 +1095,8 @@ class FooterManager {
         const footer = document.querySelector('.footer');
         if (!footer) return;
 
+        this.updateAvailability(footer, config.footer);
+
         // Update footer tagline
         this.updateFooterTagline(config.footer);
 
@@ -1046,6 +1107,18 @@ class FooterManager {
 
         // Update footer bottom content
         this.updateFooterBottom(config.footer);
+    }
+
+    updateAvailability(footer, footerConfig) {
+        const availabilityElement = footer.querySelector('.footer-availability');
+        if (!availabilityElement) return;
+
+        if (footerConfig.availability_label) {
+            availabilityElement.textContent = footerConfig.availability_label;
+            availabilityElement.hidden = false;
+        } else {
+            availabilityElement.hidden = true;
+        }
     }
 
     updateFooterTagline(footerConfig) {

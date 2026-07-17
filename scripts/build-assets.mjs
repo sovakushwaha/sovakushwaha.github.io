@@ -12,6 +12,7 @@ const cssFiles = [
   'css/passion.css',
   'css/skills.css',
   'css/experience.css',
+  'css/education.css',
   'css/projects.css',
   'css/footer.css',
   'css/animations.css',

@@ -4,6 +4,7 @@
     "passion": true,
     "projects": true,
     "experience": true,
+    "education": true,
     "skills": true,
     "github_projects": true
   },
@@ -242,7 +243,7 @@
     ]
   },
   "experience": {
-    "title": "Professional Background",
+    "title": "Professional Experience",
     "jobs": [
       {
         "company": "Independent Portfolio",
@@ -272,21 +273,27 @@
           "Contributed to mobile application development in a logistics-focused business environment.",
           "Worked with product requirements and application data flows to support usable digital experiences."
         ]
-      },
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "items": [
       {
-        "company": "University of the West of Scotland",
-        "role": "Master's Degree, Information Technology with Data Analytics",
+        "institution": "University of the West of Scotland",
+        "qualification": "Master's Degree, Information Technology with Data Analytics",
         "date": "Jan 2026 – Jan 2027",
-        "responsibilities": [
+        "status": "Currently studying",
+        "details": [
           "Currently pursuing postgraduate study in information technology with a data analytics specialization.",
           "Developing advanced knowledge at the intersection of technology, data analysis, and evidence-based decision-making."
         ]
       },
       {
-        "company": "KIST",
-        "role": "Bachelor in Information Technology (BIT)",
+        "institution": "KIST",
+        "qualification": "Bachelor in Information Technology (BIT)",
         "date": "2021 – 2024",
-        "responsibilities": [
+        "details": [
           "Built a broad foundation in programming, databases, software development, and information systems.",
           "Developed the technical base now applied to Python, SQL, data analysis, and business intelligence."
         ]
@@ -354,6 +361,7 @@
     "show_social_links": true,
     "show_built_with": true,
     "built_with_text": "Built with vanilla JavaScript and hosted on GitHub Pages",
-    "tagline": "Open to data analyst opportunities and meaningful analytics collaborations."
+    "availability_label": "Available for Data Analyst roles",
+    "tagline": "Based in the United Kingdom and open to Data Analyst opportunities."
   }
 }

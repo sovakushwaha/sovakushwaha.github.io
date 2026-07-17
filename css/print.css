@@ -28,6 +28,7 @@
     }
 
     .experience-item,
+    .education-card,
     .project-item {
         border-color: #eee !important;
         page-break-inside: avoid;

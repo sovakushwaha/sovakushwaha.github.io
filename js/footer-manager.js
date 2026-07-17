@@ -6,6 +6,8 @@ export class FooterManager {
         const footer = document.querySelector('.footer');
         if (!footer) return;
 
+        this.updateAvailability(footer, config.footer);
+
         // Update footer tagline
         this.updateFooterTagline(config.footer);
 
@@ -16,6 +18,18 @@ export class FooterManager {
 
         // Update footer bottom content
         this.updateFooterBottom(config.footer);
+    }
+
+    updateAvailability(footer, footerConfig) {
+        const availabilityElement = footer.querySelector('.footer-availability');
+        if (!availabilityElement) return;
+
+        if (footerConfig.availability_label) {
+            availabilityElement.textContent = footerConfig.availability_label;
+            availabilityElement.hidden = false;
+        } else {
+            availabilityElement.hidden = true;
+        }
     }
 
     updateFooterTagline(footerConfig) {
