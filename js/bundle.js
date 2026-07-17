@@ -259,6 +259,7 @@ class SectionManager {
     updatePageContent(config) {
         const features = {
             about: true,
+            passion: true,
             projects: true,
             experience: true,
             skills: true,
@@ -267,6 +268,7 @@ class SectionManager {
         };
 
         this.toggleSection('about', features.about);
+        this.toggleSection('passion', features.passion);
         this.toggleSection('projects', features.projects);
         this.toggleSection('experience', features.experience);
         this.toggleSection('skills', features.skills);
@@ -274,6 +276,10 @@ class SectionManager {
 
         if (features.about) {
             this.updateAboutSection(config);
+        }
+
+        if (features.passion) {
+            this.updatePassionSection(config);
         }
 
         if (features.projects) {
@@ -306,6 +312,59 @@ class SectionManager {
                 .join('');
         } else {
             aboutSection.innerHTML = '<p>Welcome to my portfolio.</p>';
+        }
+    }
+
+    updatePassionSection(config) {
+        const section = document.querySelector('.passion');
+        const passion = config.passion;
+        if (!section || !passion) return;
+
+        const setText = (selector, value) => {
+            const element = section.querySelector(selector);
+            if (element) element.textContent = value || '';
+        };
+
+        setText('.passion-eyebrow', passion.eyebrow);
+        setText('#passion-title', passion.title);
+        setText('.passion-lead', passion.lead);
+        setText('.passion-body', passion.body);
+
+        const topics = section.querySelector('.passion-topics');
+        if (topics) {
+            topics.replaceChildren();
+            (passion.topics || []).forEach(topic => {
+                const tag = document.createElement('span');
+                tag.textContent = topic;
+                topics.appendChild(tag);
+            });
+        }
+
+        const cta = section.querySelector('.passion-cta');
+        const ctaUrl = this.safeUrl(passion.cta?.url);
+        if (cta && ctaUrl) {
+            cta.href = ctaUrl;
+            cta.setAttribute('aria-label', passion.cta?.label || 'Visit YouTube channel');
+            const label = cta.querySelector('span');
+            if (label) label.textContent = passion.cta?.label || 'Visit YouTube channel';
+        } else if (cta) {
+            cta.hidden = true;
+        }
+
+        const instagramCta = section.querySelector('.passion-instagram');
+        const instagramUrl = this.safeUrl(passion.instagram_cta?.url);
+        if (instagramCta && instagramUrl) {
+            instagramCta.href = instagramUrl;
+            instagramCta.setAttribute(
+                'aria-label',
+                passion.instagram_cta?.label || 'Follow SovaVerse on Instagram'
+            );
+            const label = instagramCta.querySelector('span');
+            if (label) {
+                label.textContent = passion.instagram_cta?.label || 'Follow on Instagram';
+            }
+        } else if (instagramCta) {
+            instagramCta.hidden = true;
         }
     }
 

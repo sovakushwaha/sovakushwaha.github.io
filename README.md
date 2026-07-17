@@ -4,6 +4,10 @@ Personal portfolio website for [Sova Kushwaha](https://github.com/sovaamahato), 
 
 **Live site:** [https://sovaamahato.github.io](https://sovaamahato.github.io)
 
+**YouTube:** [SovaVerse — Data Science, AI & ML](https://www.youtube.com/@sovaVerse01)
+
+**Instagram:** [@sovaverse](https://www.instagram.com/sovaverse/)
+
 ## Focus
 
 The portfolio presents ten applied analytics projects covering:

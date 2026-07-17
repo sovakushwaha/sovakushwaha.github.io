@@ -1,6 +1,7 @@
 {
   "features": {
     "about": true,
+    "passion": true,
     "projects": true,
     "experience": true,
     "skills": true,
@@ -12,7 +13,7 @@
     "seo": {
       "title": "Sova Kushwaha | Data Analyst Portfolio",
       "description": "Data analyst portfolio featuring Python, SQL, statistical analysis, ETL pipelines, dashboards, and business-focused insights.",
-      "keywords": "Sova Kushwaha, data analyst, Python, SQL, pandas, SQLite, data visualization, exploratory data analysis, business intelligence, portfolio",
+      "keywords": "Sova Kushwaha, data analyst, data science, artificial intelligence, machine learning, YouTube tutor, Python, SQL, pandas, SQLite, data visualization, exploratory data analysis, business intelligence, portfolio",
       "author": "Sova Kushwaha",
       "og_image": "https://sovaamahato.github.io/assets/profile/sova-kushwaha.png",
       "og_image_alt": "Professional portrait of Sova Kushwaha",
@@ -36,6 +37,16 @@
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/sova-kushwaha-380a15265/",
       "icon": "linkedin"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/@sovaVerse01",
+      "icon": "youtube"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/sovaverse/",
+      "icon": "instagram"
     }
   ],
   "github_username": "sovaamahato",
@@ -44,6 +55,26 @@
       "I am a BIT graduate and technology professional transitioning into data analytics, with a practical portfolio built around Python, SQL, statistical analysis, data visualization, and business storytelling. My work focuses on turning imperfect datasets into clear metrics, defensible insights, and recommendations that decision-makers can act on.",
       "My software-development background in Flutter gives me a strong foundation in structured problem solving, reusable code, testing, and user-focused communication. Across ten end-to-end analytics projects, I have built reproducible ETL workflows, SQLite data models, exploratory analyses, KPI reports, customer segments, statistical tests, and interactive dashboards using synthetic data."
     ]
+  },
+  "passion": {
+    "eyebrow": "YouTube Tutor · SovaVerse",
+    "title": "Making Data Science, AI & ML easier to understand",
+    "lead": "I believe technical knowledge becomes more valuable when it is shared clearly.",
+    "body": "Through SovaVerse, I explore Data Science, Artificial Intelligence, and Machine Learning in an approachable way—documenting my learning journey while helping others build confidence with complex ideas. I am especially passionate about practical and responsible AI: preparing reliable data, understanding how models work, and communicating what results do and do not mean.",
+    "topics": [
+      "Data Science",
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Learning in Public"
+    ],
+    "cta": {
+      "label": "Visit SovaVerse on YouTube",
+      "url": "https://www.youtube.com/@sovaVerse01"
+    },
+    "instagram_cta": {
+      "label": "Follow SovaVerse on Instagram",
+      "url": "https://www.instagram.com/sovaverse/"
+    }
   },
   "projects": {
     "title": "Featured Data Analytics Projects",

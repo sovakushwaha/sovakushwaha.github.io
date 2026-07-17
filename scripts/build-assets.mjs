@@ -9,6 +9,7 @@ const cssFiles = [
   'css/print.css',
   'css/header.css',
   'css/about.css',
+  'css/passion.css',
   'css/skills.css',
   'css/experience.css',
   'css/projects.css',
