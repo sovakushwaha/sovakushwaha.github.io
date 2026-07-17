@@ -1128,7 +1128,7 @@ class GitHubProjectsManager {
     }
 }
 
-// Curriculum Vitae section and in-page PDF viewer
+// Top-level Curriculum Vitae actions and in-page PDF viewer
 class CVManager {
     updateCVSection(config) {
         const section = document.querySelector('.cv');
@@ -1152,12 +1152,21 @@ class CVManager {
         downloadLink.href = fileUrl;
         downloadLink.setAttribute('aria-label', `${cv.download_label || 'Download CV'} as PDF`);
         downloadLink.querySelector('span:last-child').textContent = cv.download_label || 'Download CV';
-        openButton.setAttribute('aria-label', `${cv.open_label || 'Open CV'} in page`);
-        openButton.querySelector('span:last-child').textContent = cv.open_label || 'Open CV';
+        openButton.setAttribute('aria-label', `${cv.open_label || 'Preview CV'} in page`);
+        openButton.querySelector('span:last-child').textContent = cv.open_label || 'Preview CV';
         iframe.src = fileUrl;
         fallbackLink.href = fileUrl;
+        fallbackLink.target = '_blank';
+        fallbackLink.rel = 'noopener noreferrer';
 
-        openButton.addEventListener('click', () => dialog.showModal());
+        openButton.addEventListener('click', () => {
+            if (typeof dialog.showModal === 'function') {
+                dialog.showModal();
+                return;
+            }
+
+            window.open(fileUrl, '_blank', 'noopener,noreferrer');
+        });
         closeButton.addEventListener('click', () => dialog.close());
         dialog.addEventListener('click', event => {
             if (event.target === dialog) dialog.close();

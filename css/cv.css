@@ -1,27 +1,36 @@
-/* Curriculum Vitae Section */
-.cv-card {
+/* Recruiter-facing CV actions */
+.cv-cta {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
-    padding: clamp(1.75rem, 5vw, 3rem);
+    width: min(100%, 46rem);
+    gap: clamp(1rem, 3vw, 2rem);
+    margin: 0 auto;
+    padding: clamp(1.1rem, 3vw, 1.5rem);
     overflow: hidden;
+    text-align: left;
     background:
-        radial-gradient(circle at 100% 0, rgba(37, 99, 235, 0.16), transparent 42%),
+        radial-gradient(circle at 100% 0, rgba(37, 99, 235, 0.18), transparent 46%),
         var(--card-background);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-xl);
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.1);
+}
+
+.cv-copy {
+    min-width: 0;
 }
 
 .cv-copy h2 {
-    margin: 0.25rem 0 0.75rem;
+    margin: 0.15rem 0 0.3rem;
+    font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+    line-height: 1.25;
 }
 
 .cv-eyebrow {
     margin: 0;
     color: var(--primary-color);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -30,6 +39,8 @@
 .cv-description {
     margin: 0;
     color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .cv-actions {
@@ -43,8 +54,8 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    min-height: 2.875rem;
-    padding: 0.7rem 1rem;
+    min-height: 3rem;
+    padding: 0.75rem 1.1rem;
     color: var(--on-primary-color);
     background: var(--primary-color);
     border: 1px solid var(--primary-color);
@@ -58,11 +69,13 @@
     transition: var(--transition);
 }
 
-.cv-button:hover {
+.cv-button:hover,
+.cv-button:focus-visible {
     color: var(--on-primary-color);
     background: var(--primary-color-dark);
     border-color: var(--primary-color-dark);
     transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.22);
 }
 
 .cv-open {
@@ -70,12 +83,15 @@
     background: transparent;
 }
 
-.cv-open:hover {
+.cv-open:hover,
+.cv-open:focus-visible {
     color: var(--on-primary-color);
 }
 
-.cv-button .material-symbols-outlined {
-    font-size: 1.2rem;
+.cv-button svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex-shrink: 0;
 }
 
 .cv-dialog {
@@ -134,8 +150,15 @@
     border-color: var(--primary-color);
 }
 
-.cv-dialog-close .material-symbols-outlined {
-    font-size: 1.1rem;
+.cv-dialog-close:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--primary-color) 35%, transparent);
+    outline-offset: 2px;
+}
+
+.cv-dialog-close svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
 }
 
 .cv-viewer {
@@ -163,7 +186,7 @@
 }
 
 @media (max-width: 700px) {
-    .cv-card {
+    .cv-cta {
         align-items: flex-start;
         flex-direction: column;
     }
@@ -183,6 +206,10 @@
 }
 
 @media (max-width: 420px) {
+    .cv-cta {
+        padding: 1rem;
+    }
+
     .cv-actions {
         flex-direction: column;
     }

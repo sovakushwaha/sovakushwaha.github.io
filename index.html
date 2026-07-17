@@ -120,6 +120,32 @@
             <h1></h1>
             <p class="tagline"></p>
             <div class="social-links" role="navigation" aria-label="Social links"></div>
+            <section class="cv cv-cta" aria-labelledby="cv-title">
+                <div class="cv-copy">
+                    <p class="cv-eyebrow">Curriculum vitae</p>
+                    <h2 id="cv-title"></h2>
+                    <p class="cv-description"></p>
+                </div>
+                <div class="cv-actions" aria-label="CV actions">
+                    <a class="cv-button cv-download" download>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M12 3v12"></path>
+                            <path d="m7 10 5 5 5-5"></path>
+                            <path d="M5 21h14"></path>
+                        </svg>
+                        <span></span>
+                    </a>
+                    <button class="cv-button cv-open" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"></path>
+                            <path d="M14 2v6h6"></path>
+                            <path d="M9 15h6"></path>
+                            <path d="M9 18h4"></path>
+                        </svg>
+                        <span></span>
+                    </button>
+                </div>
+            </section>
         </header>
 
         <section class="about" aria-label="About me"></section>
@@ -176,26 +202,6 @@
             <div class="skills-grid"></div>
         </section>
 
-        <section class="cv" aria-labelledby="cv-title">
-            <div class="cv-card">
-                <div class="cv-copy">
-                    <p class="cv-eyebrow">Professional profile</p>
-                    <h2 id="cv-title"></h2>
-                    <p class="cv-description"></p>
-                </div>
-                <div class="cv-actions">
-                    <a class="cv-button cv-download" download>
-                        <span class="material-symbols-outlined" aria-hidden="true">download</span>
-                        <span></span>
-                    </a>
-                    <button class="cv-button cv-open" type="button">
-                        <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
-                        <span></span>
-                    </button>
-                </div>
-            </div>
-        </section>
-        
         <section class="projects" aria-label="Latest projects">
             <h2></h2>
         </section>
@@ -221,7 +227,10 @@
         <div class="cv-dialog-header">
             <h2 id="cv-dialog-title">Sova Kushwaha — Curriculum Vitae</h2>
             <button class="cv-dialog-close" type="button" aria-label="Close CV viewer">
-                <span class="material-symbols-outlined" aria-hidden="true">close</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                    <path d="m18 6-12 12"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
                 <span>Close</span>
             </button>
         </div>
