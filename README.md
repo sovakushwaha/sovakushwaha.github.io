@@ -2,6 +2,8 @@
 
 Personal portfolio website for [Sova Kushwaha](https://github.com/sovaamahato), built for GitHub Pages.
 
+Sova is pursuing a Master's Degree in Information Technology with Data Analytics at the University of the West of Scotland.
+
 **Live site:** [https://sovaamahato.github.io](https://sovaamahato.github.io)
 
 **YouTube:** [SovaVerse — Data Science, AI & ML](https://www.youtube.com/@sovaVerse01)

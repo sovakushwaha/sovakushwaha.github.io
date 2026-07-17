@@ -52,7 +52,7 @@
   "github_username": "sovaamahato",
   "about": {
     "paragraphs": [
-      "I am a BIT graduate and technology professional transitioning into data analytics, with a practical portfolio built around Python, SQL, statistical analysis, data visualization, and business storytelling. My work focuses on turning imperfect datasets into clear metrics, defensible insights, and recommendations that decision-makers can act on.",
+      "I am a BIT graduate currently pursuing a Master's Degree in Information Technology with Data Analytics at the University of the West of Scotland. I am transitioning into data analytics with a practical portfolio built around Python, SQL, statistical analysis, data visualization, and business storytelling. My work focuses on turning imperfect datasets into clear metrics, defensible insights, and recommendations that decision-makers can act on.",
       "My software-development background in Flutter gives me a strong foundation in structured problem solving, reusable code, testing, and user-focused communication. Across ten end-to-end analytics projects, I have built reproducible ETL workflows, SQLite data models, exploratory analyses, KPI reports, customer segments, statistical tests, and interactive dashboards using synthetic data."
     ]
   },
@@ -257,26 +257,35 @@
       {
         "company": "Thulo",
         "role": "Flutter Developer",
-        "date": "Current",
+        "date": "Mar 2025 – Oct 2025 · 8 mos",
         "responsibilities": [
-          "Developing cross-platform mobile experiences with Flutter in a product-focused technology environment.",
-          "Applying structured debugging, reusable component design, and user-centered problem solving.",
-          "Extending this software-engineering foundation into reproducible data workflows and analytical products."
+          "Developed cross-platform mobile experiences with Flutter in a product-focused technology environment.",
+          "Applied structured debugging, reusable component design, and user-centered problem solving.",
+          "Extended this software-engineering foundation into reproducible data workflows and analytical products."
         ]
       },
       {
         "company": "Gaaubesi Logistics",
         "role": "Flutter Developer",
-        "date": "Previous",
+        "date": "Mar 2024 – Mar 2025 · 1 yr 1 mo",
         "responsibilities": [
           "Contributed to mobile application development in a logistics-focused business environment.",
           "Worked with product requirements and application data flows to support usable digital experiences."
         ]
       },
       {
+        "company": "University of the West of Scotland",
+        "role": "Master's Degree, Information Technology with Data Analytics",
+        "date": "Jan 2026 – Jan 2027",
+        "responsibilities": [
+          "Currently pursuing postgraduate study in information technology with a data analytics specialization.",
+          "Developing advanced knowledge at the intersection of technology, data analysis, and evidence-based decision-making."
+        ]
+      },
+      {
         "company": "KIST",
-        "role": "Bachelor in Information Technology",
-        "date": "2021 - 2024",
+        "role": "Bachelor in Information Technology (BIT)",
+        "date": "2021 – 2024",
         "responsibilities": [
           "Built a broad foundation in programming, databases, software development, and information systems.",
           "Developed the technical base now applied to Python, SQL, data analysis, and business intelligence."
