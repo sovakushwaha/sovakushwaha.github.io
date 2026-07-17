@@ -256,7 +256,8 @@ class SectionManager {
         const section = document.querySelector(`.${sectionClass}`);
         if (!section) return;
 
-        section.style.display = isEnabled ? 'block' : 'none';
+        section.hidden = !isEnabled;
+        section.style.removeProperty('display');
     }
 
     updatePageContent(config) {

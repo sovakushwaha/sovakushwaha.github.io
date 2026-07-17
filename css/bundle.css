@@ -1033,44 +1033,92 @@ h1 {
 /* css/cv.css */
 /* Recruiter-facing CV actions */
 .cv-cta {
-    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
-    justify-content: space-between;
-    width: min(100%, 46rem);
-    gap: clamp(1rem, 3vw, 2rem);
+    width: min(100%, 54rem);
+    gap: clamp(1rem, 2.5vw, 1.5rem);
     margin: 0 auto;
-    padding: clamp(1.1rem, 3vw, 1.5rem);
+    padding: clamp(1rem, 2.5vw, 1.35rem);
     overflow: hidden;
     text-align: left;
     background:
-        radial-gradient(circle at 100% 0, rgba(37, 99, 235, 0.18), transparent 46%),
+        radial-gradient(circle at 100% 0, rgba(37, 99, 235, 0.13), transparent 40%),
+        linear-gradient(135deg, color-mix(in srgb, var(--card-background) 96%, var(--primary-color)), var(--card-background) 60%),
         var(--card-background);
-    border: 1px solid var(--border-color);
+    border: 1px solid color-mix(in srgb, var(--primary-color) 20%, var(--border-color));
     border-radius: var(--border-radius-xl);
-    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.1);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    isolation: isolate;
+}
+
+.cv-cta::after {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--primary-color), color-mix(in srgb, var(--primary-color) 35%, transparent));
+    content: '';
+}
+
+.cv-visual {
+    display: grid;
+    width: clamp(3.75rem, 7vw, 4.5rem);
+    aspect-ratio: 1;
+    place-items: center;
+    color: var(--on-primary-color);
+    background: linear-gradient(145deg, var(--primary-color), var(--primary-color-dark));
+    border: 1px solid color-mix(in srgb, var(--primary-color) 70%, white);
+    border-radius: calc(var(--border-radius-xl) + 2px);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--primary-color) 22%, transparent);
+}
+
+.cv-visual svg {
+    width: 58%;
+    height: 58%;
 }
 
 .cv-copy {
     min-width: 0;
 }
 
+.cv-eyebrow {
+    margin: 0 0 0.2rem;
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
 .cv-copy h2 {
-    margin: 0.15rem 0 0.3rem;
-    font-size: clamp(1.05rem, 2.5vw, 1.3rem);
-    line-height: 1.25;
+    margin: 0 0 0.2rem;
+    font-size: clamp(1.35rem, 3vw, 1.7rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    text-align: left;
 }
 
 .cv-description {
     margin: 0;
+    color: var(--text-color);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.cv-summary {
+    margin: 0.15rem 0 0;
     color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.8125rem;
+    line-height: 1.45;
 }
 
 .cv-actions {
-    display: flex;
+    display: grid;
     flex-shrink: 0;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 
 .cv-button {
@@ -1078,44 +1126,63 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    min-height: 3rem;
-    padding: 0.75rem 1.1rem;
+    min-height: 2.875rem;
+    padding: 0.7rem 1rem;
     color: var(--on-primary-color);
     background: var(--primary-color);
     border: 1px solid var(--primary-color);
-    border-radius: var(--border-radius-full);
+    border-radius: var(--border-radius-lg);
     font: inherit;
     font-size: 0.875rem;
     font-weight: 700;
     line-height: 1;
     text-decoration: none;
+    white-space: nowrap;
     cursor: pointer;
-    transition: var(--transition);
+    touch-action: manipulation;
+    transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
 }
 
-.cv-button:hover,
-.cv-button:focus-visible {
+.cv-button:hover {
     color: var(--on-primary-color);
     background: var(--primary-color-dark);
     border-color: var(--primary-color-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.22);
+    transform: translateY(-1px);
+    box-shadow: 0 7px 16px color-mix(in srgb, var(--primary-color) 24%, transparent);
+}
+
+.cv-button:active {
+    transform: translateY(0);
+    box-shadow: none;
 }
 
 .cv-open {
     color: var(--primary-color);
-    background: transparent;
+    background: color-mix(in srgb, var(--card-background) 88%, transparent);
 }
 
-.cv-open:hover,
-.cv-open:focus-visible {
-    color: var(--on-primary-color);
+.cv-open:hover {
+    color: var(--primary-color-dark);
+    background: color-mix(in srgb, var(--primary-color) 9%, var(--card-background));
+    border-color: var(--primary-color-dark);
+    box-shadow: none;
 }
 
 .cv-button svg {
     width: 1.15rem;
     height: 1.15rem;
     flex-shrink: 0;
+}
+
+[data-theme="dark"] .cv-cta {
+    background:
+        radial-gradient(circle at 100% 0, rgba(96, 165, 250, 0.16), transparent 40%),
+        linear-gradient(135deg, color-mix(in srgb, var(--card-background) 94%, var(--primary-color)), var(--card-background) 60%);
+    box-shadow: 0 14px 32px rgba(2, 6, 23, 0.25);
+}
+
+[data-theme="dark"] .cv-visual {
+    color: #0f172a;
 }
 
 .cv-dialog {
@@ -1209,18 +1276,15 @@ h1 {
     text-align: center;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
     .cv-cta {
-        align-items: flex-start;
-        flex-direction: column;
+        grid-template-columns: auto minmax(0, 1fr);
     }
 
     .cv-actions {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         width: 100%;
-    }
-
-    .cv-button {
-        flex: 1;
     }
 
     .cv-dialog {
@@ -1231,15 +1295,31 @@ h1 {
 
 @media (max-width: 420px) {
     .cv-cta {
-        padding: 1rem;
+        gap: 0.85rem;
+        padding: 1rem 0.9rem 0.9rem 1rem;
     }
 
-    .cv-actions {
-        flex-direction: column;
+    .cv-summary {
+        display: none;
+    }
+
+    .cv-copy h2 {
+        font-size: 1.25rem;
+    }
+
+    .cv-button {
+        padding-inline: 0.75rem;
+        font-size: 0.8125rem;
     }
 
     .cv-dialog-close span:last-child {
         display: none;
+    }
+}
+
+@media (max-width: 350px) {
+    .cv-actions {
+        grid-template-columns: 1fr;
     }
 }
 
