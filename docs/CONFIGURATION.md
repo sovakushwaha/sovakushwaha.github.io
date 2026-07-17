@@ -254,8 +254,7 @@ Customize your footer content and links:
 {
   "footer": {
     "show_social_links": true,           // Show social links in footer
-    "show_built_with": true,             // Show "Built with" text
-    "built_with_text": "Built with ❤️ using vanilla JavaScript",
+    "availability_label": "Available for Data Analyst roles",
     "tagline": "Let's connect and build something amazing together!"
   }
 }

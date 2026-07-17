@@ -11,6 +11,7 @@ const cssFiles = [
   'css/about.css',
   'css/passion.css',
   'css/skills.css',
+  'css/cv.css',
   'css/experience.css',
   'css/education.css',
   'css/projects.css',
@@ -27,6 +28,7 @@ const jsFiles = [
   'js/section-manager.js',
   'js/header-manager.js',
   'js/github-projects-manager.js',
+  'js/cv-manager.js',
   'js/footer-manager.js',
   'js/main.js'
 ];

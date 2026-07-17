@@ -98,19 +98,6 @@
     transition: transform 0.3s ease;
 }
 
-.footer-bottom {
-    padding-top: 2rem;
-    margin-top: 2rem;
-    border-top: 1px solid var(--border-color);
-    opacity: 0.8;
-}
-
-.footer-built-with {
-    color: var(--text-muted);
-    font-size: 0.875rem;
-    font-weight: 400;
-}
-
 /* Responsive Design for Footer */
 @media (max-width: 768px) {
     .footer {
@@ -148,9 +135,5 @@
     .footer-social svg {
         width: 16px;
         height: 16px;
-    }
-
-    .footer-built-with {
-        font-size: 0.8125rem;
     }
 }

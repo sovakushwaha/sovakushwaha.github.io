@@ -51,6 +51,13 @@ if (config.features?.education && !Array.isArray(config.education?.items)) {
   errors.push('education.items must be an array when education is enabled');
 }
 
+if (config.features?.cv) {
+  requireString('cv.title', config.cv?.title);
+  requireString('cv.description', config.cv?.description);
+  requireString('cv.file', config.cv?.file);
+  checkAsset('cv.file', config.cv?.file);
+}
+
 config.education?.items?.forEach((item, index) => {
   requireString(`education.items[${index}].institution`, item.institution);
   requireString(`education.items[${index}].qualification`, item.qualification);

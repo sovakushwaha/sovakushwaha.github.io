@@ -6,6 +6,7 @@ import { LoadingManager } from './loading-manager.js';
 import { SectionManager } from './section-manager.js';
 import { HeaderManager } from './header-manager.js';
 import { GitHubProjectsManager } from './github-projects-manager.js';
+import { CVManager } from './cv-manager.js';
 import { FooterManager } from './footer-manager.js';
 
 class PortfolioApp {
@@ -17,6 +18,7 @@ class PortfolioApp {
         this.sectionManager = new SectionManager(this.configManager);
         this.headerManager = new HeaderManager();
         this.githubProjectsManager = new GitHubProjectsManager();
+        this.cvManager = new CVManager();
         this.footerManager = new FooterManager();
     }
 
@@ -37,6 +39,7 @@ class PortfolioApp {
 
             // Update page content from config
             this.sectionManager.updatePageContent(config);
+            this.cvManager.updateCVSection(config);
 
             // Update footer section
             this.footerManager.updateFooterSection(config);

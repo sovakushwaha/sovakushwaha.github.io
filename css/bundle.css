@@ -849,6 +849,201 @@ h1 {
     text-decoration-color: var(--primary-color);
 }
 
+/* css/cv.css */
+/* Curriculum Vitae Section */
+.cv-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: clamp(1.75rem, 5vw, 3rem);
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 100% 0, rgba(37, 99, 235, 0.16), transparent 42%),
+        var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-xl);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+.cv-copy h2 {
+    margin: 0.25rem 0 0.75rem;
+}
+
+.cv-eyebrow {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.cv-description {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+.cv-actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: 0.75rem;
+}
+
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.875rem;
+    padding: 0.7rem 1rem;
+    color: var(--on-primary-color);
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-full);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cv-button:hover {
+    color: var(--on-primary-color);
+    background: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
+    transform: translateY(-2px);
+}
+
+.cv-open {
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.cv-open:hover {
+    color: var(--on-primary-color);
+}
+
+.cv-button .material-symbols-outlined {
+    font-size: 1.2rem;
+}
+
+.cv-dialog {
+    width: min(1100px, calc(100vw - 2rem));
+    max-width: none;
+    height: min(90vh, 900px);
+    max-height: none;
+    padding: 0;
+    overflow: hidden;
+    color: var(--text-color);
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-xl);
+    box-shadow: 0 24px 72px rgba(15, 23, 42, 0.35);
+}
+
+.cv-dialog::backdrop {
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(4px);
+}
+
+.cv-dialog[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cv-dialog-header h2 {
+    margin: 0;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.cv-dialog-close {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.55rem 0.8rem;
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-full);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cv-dialog-close:hover {
+    border-color: var(--primary-color);
+}
+
+.cv-dialog-close .material-symbols-outlined {
+    font-size: 1.1rem;
+}
+
+.cv-viewer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.cv-viewer iframe {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    border: 0;
+}
+
+.cv-viewer-fallback {
+    margin: 0;
+    padding: 0.7rem 1rem;
+    color: var(--text-muted);
+    background: var(--background-color);
+    border-top: 1px solid var(--border-color);
+    font-size: 0.8125rem;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .cv-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .cv-actions {
+        width: 100%;
+    }
+
+    .cv-button {
+        flex: 1;
+    }
+
+    .cv-dialog {
+        width: calc(100vw - 1rem);
+        height: calc(100dvh - 1rem);
+    }
+}
+
+@media (max-width: 420px) {
+    .cv-actions {
+        flex-direction: column;
+    }
+
+    .cv-dialog-close span:last-child {
+        display: none;
+    }
+}
+
 /* css/experience.css */
 /* Experience Section */
 .experience h2 {
@@ -1646,19 +1841,6 @@ h1 {
     transition: transform 0.3s ease;
 }
 
-.footer-bottom {
-    padding-top: 2rem;
-    margin-top: 2rem;
-    border-top: 1px solid var(--border-color);
-    opacity: 0.8;
-}
-
-.footer-built-with {
-    color: var(--text-muted);
-    font-size: 0.875rem;
-    font-weight: 400;
-}
-
 /* Responsive Design for Footer */
 @media (max-width: 768px) {
     .footer {
@@ -1696,10 +1878,6 @@ h1 {
     .footer-social svg {
         width: 16px;
         height: 16px;
-    }
-
-    .footer-built-with {
-        font-size: 0.8125rem;
     }
 }
 

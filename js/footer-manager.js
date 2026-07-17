@@ -15,9 +15,6 @@ export class FooterManager {
         if (config.footer.show_social_links) {
             this.updateFooterSocialLinks(config);
         }
-
-        // Update footer bottom content
-        this.updateFooterBottom(config.footer);
     }
 
     updateAvailability(footer, footerConfig) {
@@ -104,22 +101,4 @@ export class FooterManager {
         return link;
     }
 
-    updateFooterBottom(footerConfig) {
-        const footerBottom = document.querySelector('.footer-bottom');
-        const builtWithElement = document.querySelector('.footer-built-with');
-        const showBuiltWith = footerConfig.show_built_with && footerConfig.built_with_text;
-
-        if (footerBottom) {
-            footerBottom.style.display = showBuiltWith ? '' : 'none';
-        }
-
-        if (builtWithElement) {
-            if (showBuiltWith) {
-                builtWithElement.textContent = footerConfig.built_with_text;
-                builtWithElement.style.display = 'block';
-            } else {
-                builtWithElement.style.display = 'none';
-            }
-        }
-    }
 }

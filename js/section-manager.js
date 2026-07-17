@@ -48,6 +48,7 @@ export class SectionManager {
             experience: true,
             education: true,
             skills: true,
+            cv: true,
             github_projects: true,
             ...config.features
         };
@@ -58,6 +59,7 @@ export class SectionManager {
         this.toggleSection('experience', features.experience);
         this.toggleSection('education', features.education);
         this.toggleSection('skills', features.skills);
+        this.toggleSection('cv', features.cv);
         this.toggleSection('projects-on-github', features.github_projects);
 
         if (features.about) {

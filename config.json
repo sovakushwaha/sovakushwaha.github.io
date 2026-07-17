@@ -6,6 +6,7 @@
     "experience": true,
     "education": true,
     "skills": true,
+    "cv": true,
     "github_projects": true
   },
   "site": {
@@ -348,6 +349,13 @@
       }
     ]
   },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "description": "UK-based and open to Data Analyst opportunities.",
+    "file": "assets/cv/Sova_Kushwaha_Data_Analyst_CV.pdf",
+    "download_label": "Download CV",
+    "open_label": "Open CV"
+  },
   "github_projects": {
     "title": "More Analytics Work on GitHub",
     "mode": "feed",
@@ -359,8 +367,6 @@
   },
   "footer": {
     "show_social_links": true,
-    "show_built_with": false,
-    "built_with_text": "Built with vanilla JavaScript and hosted on GitHub Pages",
     "availability_label": "Available for Data Analyst roles",
     "tagline": "Based in the United Kingdom and open to Data Analyst opportunities."
   }

@@ -267,6 +267,7 @@ class SectionManager {
             experience: true,
             education: true,
             skills: true,
+            cv: true,
             github_projects: true,
             ...config.features
         };
@@ -277,6 +278,7 @@ class SectionManager {
         this.toggleSection('experience', features.experience);
         this.toggleSection('education', features.education);
         this.toggleSection('skills', features.skills);
+        this.toggleSection('cv', features.cv);
         this.toggleSection('projects-on-github', features.github_projects);
 
         if (features.about) {
@@ -1087,6 +1089,43 @@ class GitHubProjectsManager {
     }
 }
 
+// Curriculum Vitae section and in-page PDF viewer
+class CVManager {
+    updateCVSection(config) {
+        const section = document.querySelector('.cv');
+        const dialog = document.querySelector('.cv-dialog');
+        const cv = config.cv;
+
+        if (!section || !dialog || !cv?.file) return;
+
+        const title = cv.title || 'Curriculum Vitae';
+        const fileUrl = cv.file;
+        const titleElement = section.querySelector('#cv-title');
+        const description = section.querySelector('.cv-description');
+        const downloadLink = section.querySelector('.cv-download');
+        const openButton = section.querySelector('.cv-open');
+        const closeButton = dialog.querySelector('.cv-dialog-close');
+        const iframe = dialog.querySelector('iframe');
+        const fallbackLink = dialog.querySelector('.cv-viewer-fallback a');
+
+        titleElement.textContent = title;
+        description.textContent = cv.description || '';
+        downloadLink.href = fileUrl;
+        downloadLink.setAttribute('aria-label', `${cv.download_label || 'Download CV'} as PDF`);
+        downloadLink.querySelector('span:last-child').textContent = cv.download_label || 'Download CV';
+        openButton.setAttribute('aria-label', `${cv.open_label || 'Open CV'} in page`);
+        openButton.querySelector('span:last-child').textContent = cv.open_label || 'Open CV';
+        iframe.src = fileUrl;
+        fallbackLink.href = fileUrl;
+
+        openButton.addEventListener('click', () => dialog.showModal());
+        closeButton.addEventListener('click', () => dialog.close());
+        dialog.addEventListener('click', event => {
+            if (event.target === dialog) dialog.close();
+        });
+    }
+}
+
 // Footer Manager Module
 class FooterManager {
     updateFooterSection(config) {
@@ -1104,9 +1143,6 @@ class FooterManager {
         if (config.footer.show_social_links) {
             this.updateFooterSocialLinks(config);
         }
-
-        // Update footer bottom content
-        this.updateFooterBottom(config.footer);
     }
 
     updateAvailability(footer, footerConfig) {
@@ -1193,24 +1229,6 @@ class FooterManager {
         return link;
     }
 
-    updateFooterBottom(footerConfig) {
-        const footerBottom = document.querySelector('.footer-bottom');
-        const builtWithElement = document.querySelector('.footer-built-with');
-        const showBuiltWith = footerConfig.show_built_with && footerConfig.built_with_text;
-
-        if (footerBottom) {
-            footerBottom.style.display = showBuiltWith ? '' : 'none';
-        }
-
-        if (builtWithElement) {
-            if (showBuiltWith) {
-                builtWithElement.textContent = footerConfig.built_with_text;
-                builtWithElement.style.display = 'block';
-            } else {
-                builtWithElement.style.display = 'none';
-            }
-        }
-    }
 }
 
 // Main Application Module
@@ -1224,6 +1242,7 @@ class PortfolioApp {
         this.sectionManager = new SectionManager(this.configManager);
         this.headerManager = new HeaderManager();
         this.githubProjectsManager = new GitHubProjectsManager();
+        this.cvManager = new CVManager();
         this.footerManager = new FooterManager();
     }
 
@@ -1244,6 +1263,7 @@ class PortfolioApp {
 
             // Update page content from config
             this.sectionManager.updatePageContent(config);
+            this.cvManager.updateCVSection(config);
 
             // Update footer section
             this.footerManager.updateFooterSection(config);
