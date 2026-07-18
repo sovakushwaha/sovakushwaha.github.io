@@ -1,11 +1,48 @@
 /* Projects Section */
 .projects h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     color: var(--text-color);
     font-size: 1.875rem;
     font-weight: 700;
     font-family: var(--font-display);
+}
+
+.powerbi-projects {
+    position: relative;
+}
+
+.powerbi-projects::before {
+    content: 'Interactive dashboards';
+    display: block;
+    margin: 0 auto 0.75rem;
+    color: var(--primary-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.analytics-projects {
+    margin-top: 1rem;
+}
+
+.analytics-projects::before {
+    content: 'Python, SQL & reproducible analysis';
+    display: block;
+    margin: 0 auto 0.75rem;
+    color: var(--primary-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.projects h2 + .project-item,
+.projects h2 + * {
+    margin-top: 2rem;
 }
 
 .project-item {

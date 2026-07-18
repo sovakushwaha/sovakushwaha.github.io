@@ -44,6 +44,7 @@ class ConfigManager {
     getSectionTitle(sectionKey) {
         const titles = {
             about: 'About',
+            powerbi_projects: this.config?.powerbi_projects?.title || 'Power BI Dashboards',
             projects: this.config?.projects?.title || 'Projects',
             experience: this.config?.experience?.title || 'Experience',
             education: this.config?.education?.title || 'Education',
@@ -58,6 +59,8 @@ class ConfigManager {
         switch (sectionKey) {
             case 'about':
                 return this.config?.about?.paragraphs?.length > 0;
+            case 'powerbi_projects':
+                return this.config?.powerbi_projects?.items?.length > 0;
             case 'projects':
                 return this.config?.projects?.items?.length > 0;
             case 'experience':
@@ -455,6 +458,7 @@ class SectionManager {
             about: true,
             why_hire: true,
             passion: true,
+            powerbi_projects: true,
             projects: true,
             experience: true,
             education: true,
@@ -467,7 +471,8 @@ class SectionManager {
         this.toggleSection('about', features.about);
         this.toggleSection('why-hire', features.why_hire);
         this.toggleSection('passion', features.passion);
-        this.toggleSection('projects', features.projects);
+        this.toggleSection('powerbi-projects', features.powerbi_projects);
+        this.toggleSection('analytics-projects', features.projects);
         this.toggleSection('experience', features.experience);
         this.toggleSection('education', features.education);
         this.toggleSection('skills', features.skills);
@@ -486,8 +491,20 @@ class SectionManager {
             this.updatePassionSection(config);
         }
 
+        if (features.powerbi_projects) {
+            this.updateProjectsSection(config, {
+                sectionSelector: '.powerbi-projects',
+                configKey: 'powerbi_projects',
+                titleKey: 'powerbi_projects'
+            });
+        }
+
         if (features.projects) {
-            this.updateProjectsSection(config);
+            this.updateProjectsSection(config, {
+                sectionSelector: '.analytics-projects',
+                configKey: 'projects',
+                titleKey: 'projects'
+            });
         }
 
         if (features.experience) {
@@ -609,21 +626,25 @@ class SectionManager {
         }
     }
 
-    updateProjectsSection(config) {
-        const projectsSection = document.querySelector('.projects');
+    updateProjectsSection(config, options = {}) {
+        const sectionSelector = options.sectionSelector || '.analytics-projects';
+        const configKey = options.configKey || 'projects';
+        const titleKey = options.titleKey || 'projects';
+        const projectsSection = document.querySelector(sectionSelector);
         if (!projectsSection) return;
 
         const titleElement = projectsSection.querySelector('h2');
         if (titleElement) {
-            titleElement.textContent = this.configManager.getSectionTitle('projects');
+            titleElement.textContent = this.configManager.getSectionTitle(titleKey);
         }
 
         projectsSection.querySelectorAll('.project-item').forEach(item => item.remove());
 
         const fragment = document.createDocumentFragment();
+        const items = config[configKey]?.items || [];
 
-        if (config.projects?.items?.length) {
-            config.projects.items.forEach(project => {
+        if (items.length) {
+            items.forEach(project => {
                 fragment.appendChild(this.createProjectItem(project));
             });
         } else {

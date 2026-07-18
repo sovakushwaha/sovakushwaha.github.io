@@ -76,35 +76,48 @@ config.why_hire?.items?.forEach((item, index) => {
   requireString(`why_hire.items[${index}].answer`, item.answer);
 });
 
-config.projects?.items?.forEach((project, index) => {
-  requireString(`projects.items[${index}].name`, project.name);
-  const projectPath = `projects.items[${index}]`;
-
-  if (project.images !== undefined) {
-    if (!Array.isArray(project.images) || project.images.length === 0) {
-      errors.push(`${projectPath}.images must be a non-empty array`);
-    } else {
-      project.images.forEach((image, imageIndex) => {
-        const imagePath = `${projectPath}.images[${imageIndex}]`;
-        if (!image || typeof image !== 'object' || Array.isArray(image)) {
-          errors.push(`${imagePath} must be an object`);
-          return;
-        }
-
-        requireString(`${imagePath}.src`, image.src);
-        requireString(`${imagePath}.alt`, image.alt);
-        if (image.caption !== undefined && typeof image.caption !== 'string') {
-          errors.push(`${imagePath}.caption must be a string when provided`);
-        }
-        checkAsset(`${imagePath}.src`, image.src);
-      });
-    }
-  } else if (project.picture) {
-    checkAsset(`${projectPath}.picture`, project.picture);
-  } else {
-    errors.push(`${projectPath} must include images or picture`);
+function validateProjectItems(sectionKey, items) {
+  if (!Array.isArray(items)) {
+    errors.push(`${sectionKey}.items must be an array`);
+    return;
   }
-});
+
+  items.forEach((project, index) => {
+    requireString(`${sectionKey}.items[${index}].name`, project.name);
+    const projectPath = `${sectionKey}.items[${index}]`;
+
+    if (project.images !== undefined) {
+      if (!Array.isArray(project.images) || project.images.length === 0) {
+        errors.push(`${projectPath}.images must be a non-empty array`);
+      } else {
+        project.images.forEach((image, imageIndex) => {
+          const imagePath = `${projectPath}.images[${imageIndex}]`;
+          if (!image || typeof image !== 'object' || Array.isArray(image)) {
+            errors.push(`${imagePath} must be an object`);
+            return;
+          }
+
+          requireString(`${imagePath}.src`, image.src);
+          requireString(`${imagePath}.alt`, image.alt);
+          if (image.caption !== undefined && typeof image.caption !== 'string') {
+            errors.push(`${imagePath}.caption must be a string when provided`);
+          }
+          checkAsset(`${imagePath}.src`, image.src);
+        });
+      }
+    } else if (project.picture) {
+      checkAsset(`${projectPath}.picture`, project.picture);
+    } else {
+      errors.push(`${projectPath} must include images or picture`);
+    }
+  });
+}
+
+validateProjectItems('projects', config.projects?.items);
+if (config.features?.powerbi_projects || config.powerbi_projects) {
+  requireString('powerbi_projects.title', config.powerbi_projects?.title);
+  validateProjectItems('powerbi_projects', config.powerbi_projects?.items);
+}
 
 config.experience?.jobs?.forEach((job, index) => {
   requireString(`experience.jobs[${index}].company`, job.company);

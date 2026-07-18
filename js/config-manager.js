@@ -44,6 +44,7 @@ export class ConfigManager {
     getSectionTitle(sectionKey) {
         const titles = {
             about: 'About',
+            powerbi_projects: this.config?.powerbi_projects?.title || 'Power BI Dashboards',
             projects: this.config?.projects?.title || 'Projects',
             experience: this.config?.experience?.title || 'Experience',
             education: this.config?.education?.title || 'Education',
@@ -58,6 +59,8 @@ export class ConfigManager {
         switch (sectionKey) {
             case 'about':
                 return this.config?.about?.paragraphs?.length > 0;
+            case 'powerbi_projects':
+                return this.config?.powerbi_projects?.items?.length > 0;
             case 'projects':
                 return this.config?.projects?.items?.length > 0;
             case 'experience':

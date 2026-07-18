@@ -8,7 +8,8 @@
     "education": true,
     "skills": true,
     "cv": true,
-    "github_projects": true
+    "github_projects": true,
+    "powerbi_projects": true
   },
   "site": {
     "title": "Sova Kushwaha",
@@ -106,8 +107,8 @@
       "url": "https://www.instagram.com/sovaverse/"
     }
   },
-  "projects": {
-    "title": "Featured Data Analytics Projects",
+  "powerbi_projects": {
+    "title": "Power BI Dashboards",
     "items": [
       {
         "name": "Healthcare Visitor Analytics (Power BI)",
@@ -172,7 +173,12 @@
             "title": "View Repository"
           }
         ]
-      },
+      }
+    ]
+  },
+  "projects": {
+    "title": "Python & SQL Analytics Projects",
+    "items": [
       {
         "name": "Sales Insight Workflow",
         "date": "2026",
