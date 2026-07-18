@@ -424,24 +424,24 @@ body.lightbox-open {
     display: grid;
     place-items: center;
     min-height: 0;
-    overflow: auto;
-    overscroll-behavior: contain;
+    overflow: hidden;
     background:
         radial-gradient(circle at top, rgba(37, 99, 235, 0.08), transparent 42%),
         #0f172a;
-    touch-action: pan-y pan-x;
+    touch-action: pan-y;
 }
 
 .project-lightbox-image {
     display: block;
+    box-sizing: border-box;
     width: auto;
-    max-width: none;
     height: auto;
-    max-height: none;
-    min-width: min(100%, 960px);
-    margin: auto;
-    padding: clamp(1rem, 3vw, 2.5rem);
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: clamp(0.75rem, 2vw, 1.5rem);
     object-fit: contain;
+    object-position: center;
 }
 
 .project-lightbox-nav {

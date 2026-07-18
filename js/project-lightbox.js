@@ -18,6 +18,7 @@ class ProjectLightbox {
         this.projectName = 'Project';
         this.pointerStart = null;
         this.boundKeydown = event => this.handleKeydown(event);
+        this.boundResize = () => this.fitImageToStage();
 
         this.closeButton?.addEventListener('click', () => this.close());
         this.prevButton?.addEventListener('click', event => {
@@ -35,7 +36,12 @@ class ProjectLightbox {
 
         this.dialog.addEventListener('close', () => {
             document.removeEventListener('keydown', this.boundKeydown);
+            window.removeEventListener('resize', this.boundResize);
             document.body.classList.remove('lightbox-open');
+            if (this.image) {
+                this.image.style.width = '';
+                this.image.style.height = '';
+            }
         });
 
         this.stage?.addEventListener('pointerdown', event => this.handlePointerDown(event));
@@ -59,6 +65,7 @@ class ProjectLightbox {
         this.update();
         document.body.classList.add('lightbox-open');
         document.addEventListener('keydown', this.boundKeydown);
+        window.addEventListener('resize', this.boundResize);
 
         if (typeof this.dialog.showModal === 'function') {
             this.dialog.showModal();
@@ -67,6 +74,7 @@ class ProjectLightbox {
         }
 
         this.closeButton?.focus();
+        requestAnimationFrame(() => this.fitImageToStage());
     }
 
     close() {
@@ -114,6 +122,36 @@ class ProjectLightbox {
             this.stage.scrollTop = 0;
             this.stage.scrollLeft = 0;
         }
+
+        // Ensure the chart always fits the available lightbox stage.
+        requestAnimationFrame(() => this.fitImageToStage());
+    }
+
+    fitImageToStage() {
+        if (!this.image || !this.stage) return;
+
+        const applyFit = () => {
+            const styles = getComputedStyle(this.image);
+            const padX = (parseFloat(styles.paddingLeft) || 0) + (parseFloat(styles.paddingRight) || 0);
+            const padY = (parseFloat(styles.paddingTop) || 0) + (parseFloat(styles.paddingBottom) || 0);
+            const maxWidth = Math.max(0, this.stage.clientWidth - padX);
+            const maxHeight = Math.max(0, this.stage.clientHeight - padY);
+            const naturalWidth = this.image.naturalWidth || maxWidth;
+            const naturalHeight = this.image.naturalHeight || maxHeight;
+
+            if (!maxWidth || !maxHeight || !naturalWidth || !naturalHeight) return;
+
+            const scale = Math.min(maxWidth / naturalWidth, maxHeight / naturalHeight, 1);
+            this.image.style.width = `${Math.floor(naturalWidth * scale)}px`;
+            this.image.style.height = `${Math.floor(naturalHeight * scale)}px`;
+        };
+
+        if (this.image.complete && this.image.naturalWidth) {
+            applyFit();
+            return;
+        }
+
+        this.image.addEventListener('load', applyFit, { once: true });
     }
 
     handleKeydown(event) {
