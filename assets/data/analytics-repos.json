@@ -1,5 +1,15 @@
 [
   {
+    "name": "enterprise-bi-360-powerbi",
+    "description": "Enterprise BI 360 Power BI platform for Executive, Finance, Sales, Marketing, and Supply Chain with advanced DAX and star-schema modeling.",
+    "html_url": "https://github.com/sovakushwaha/enterprise-bi-360-powerbi",
+    "language": "Power BI",
+    "topics": ["powerbi", "business-intelligence", "dax"],
+    "stars": 0,
+    "forks": 0,
+    "updated_at": "2026-07-25"
+  },
+  {
     "name": "hr-employee-analytics-powerbi",
     "description": "Power BI HR analytics dashboard for hiring trends, attrition, salary groups, overtime, and interactive workforce slicers.",
     "html_url": "https://github.com/sovakushwaha/hr-employee-analytics-powerbi",

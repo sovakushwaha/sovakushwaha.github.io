@@ -111,6 +111,53 @@
     "title": "Power BI Dashboards",
     "items": [
       {
+        "name": "Enterprise BI 360 Dashboard (Power BI)",
+        "date": "2026",
+        "description": [
+          "Built a multi-page enterprise Power BI platform for Executive, Finance, Sales, Marketing, and Supply Chain stakeholders.",
+          "Designed star-schema modeling with advanced DAX for P&L, margins, YoY/YTD comparisons, forecast accuracy, and inventory risk flags.",
+          "Tech: Power BI, Power Query, DAX, dimensional modeling"
+        ],
+        "images": [
+          {
+            "src": "assets/projects/enterprise-bi-360-powerbi/home.png",
+            "alt": "Enterprise BI 360 home navigation page",
+            "caption": "Home portal"
+          },
+          {
+            "src": "assets/projects/enterprise-bi-360-powerbi/executive.png",
+            "alt": "Enterprise BI 360 executive dashboard",
+            "caption": "Executive overview"
+          },
+          {
+            "src": "assets/projects/enterprise-bi-360-powerbi/finance.png",
+            "alt": "Enterprise BI 360 finance P&L dashboard",
+            "caption": "Finance P&L"
+          },
+          {
+            "src": "assets/projects/enterprise-bi-360-powerbi/sales.png",
+            "alt": "Enterprise BI 360 sales performance dashboard",
+            "caption": "Sales performance"
+          },
+          {
+            "src": "assets/projects/enterprise-bi-360-powerbi/marketing.png",
+            "alt": "Enterprise BI 360 marketing dashboard",
+            "caption": "Marketing view"
+          },
+          {
+            "src": "assets/projects/enterprise-bi-360-powerbi/supply-chain.png",
+            "alt": "Enterprise BI 360 supply chain dashboard",
+            "caption": "Supply chain"
+          }
+        ],
+        "links": [
+          {
+            "url": "https://github.com/sovakushwaha/enterprise-bi-360-powerbi",
+            "title": "View Repository"
+          }
+        ]
+      },
+      {
         "name": "HR Employee Analytics (Power BI)",
         "date": "2026",
         "description": [
@@ -728,7 +775,7 @@
     "title": "More Analytics Work on GitHub",
     "mode": "feed",
     "source_url": "assets/data/analytics-repos.json",
-    "max_repos": 14,
+    "max_repos": 15,
     "excluded_repos": [
       "sovakushwaha.github.io"
     ]
