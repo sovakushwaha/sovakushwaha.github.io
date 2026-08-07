@@ -296,6 +296,48 @@
     "title": "Python & SQL Analytics Projects",
     "items": [
       {
+        "name": "False-Alert & Practical Reliability (Video Analytics)",
+        "date": "2026",
+        "description": [
+          "Built a PyTorch evaluation pipeline for CUHK Avenue public-space video anomaly detection focused on false alerts and practical reliability, not only AUC.",
+          "Reported frame AUC 0.75 / AP 0.47 with event-level false alerts/hour (~20× lower than frame-level at best F1), threshold sensitivity, FP-burst analysis, and estimated reviewer minutes/hour.",
+          "Tech: Python, PyTorch, OpenCV, scikit-learn, matplotlib, SciPy"
+        ],
+        "images": [
+          {
+            "src": "assets/projects/avenue-false-alert-reliability/01_score_timeline.png",
+            "alt": "Frame-level anomaly scores versus ground-truth anomaly intervals",
+            "caption": "Anomaly score timeline"
+          },
+          {
+            "src": "assets/projects/avenue-false-alert-reliability/02_roc_curve.png",
+            "alt": "ROC curve for frame-level anomaly detection",
+            "caption": "ROC curve"
+          },
+          {
+            "src": "assets/projects/avenue-false-alert-reliability/03_threshold_sensitivity_false_alerts.png",
+            "alt": "Threshold sensitivity plot of event false alerts versus recall",
+            "caption": "False alerts vs recall"
+          },
+          {
+            "src": "assets/projects/avenue-false-alert-reliability/04_reviewer_burden.png",
+            "alt": "Estimated reviewer minutes per hour across recall operating points",
+            "caption": "Reviewer burden"
+          },
+          {
+            "src": "assets/projects/avenue-false-alert-reliability/06_frame_vs_event_false_alerts.png",
+            "alt": "Comparison of frame-level and event-level false alert rates",
+            "caption": "Frame vs event false alerts"
+          }
+        ],
+        "links": [
+          {
+            "url": "https://github.com/sovakushwaha/avenue-false-alert-reliability",
+            "title": "View Repository"
+          }
+        ]
+      },
+      {
         "name": "Sales Insight Workflow",
         "date": "2026",
         "description": [

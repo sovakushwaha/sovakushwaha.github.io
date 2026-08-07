@@ -1,5 +1,15 @@
 [
   {
+    "name": "avenue-false-alert-reliability",
+    "description": "False-alert and practical-reliability evaluation for public-space video anomaly detection with threshold sensitivity and reviewer-burden analysis.",
+    "html_url": "https://github.com/sovakushwaha/avenue-false-alert-reliability",
+    "language": "Python",
+    "topics": ["computer-vision", "anomaly-detection", "pytorch", "trustworthy-ai"],
+    "stars": 0,
+    "forks": 0,
+    "updated_at": "2026-08-07"
+  },
+  {
     "name": "enterprise-bi-360-powerbi",
     "description": "Enterprise BI 360 Power BI platform for Executive, Finance, Sales, Marketing, and Supply Chain with advanced DAX and star-schema modeling.",
     "html_url": "https://github.com/sovakushwaha/enterprise-bi-360-powerbi",
