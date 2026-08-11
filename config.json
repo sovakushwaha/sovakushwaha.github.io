@@ -134,7 +134,7 @@
     ]
   },
   "passion": {
-    "eyebrow": "YouTube Tutor · SovaVerse",
+    "eyebrow": "YouTube Tutor \u00b7 SovaVerse",
     "title": "Making Data Science, AI & ML easier to understand",
     "lead": "I believe technical knowledge becomes more valuable when it is shared clearly.",
     "body": "Through SovaVerse, I explore Data Science, Artificial Intelligence, and Machine Learning in an approachable way, documenting my learning journey while helping others build confidence with complex ideas. I am especially passionate about practical and responsible AI: preparing reliable data, understanding how models work, and communicating what results do and do not mean.",
@@ -346,7 +346,7 @@
         "date": "2026",
         "description": [
           "Built a PyTorch evaluation pipeline for CUHK Avenue public-space video anomaly detection focused on false alerts and practical reliability, not only AUC.",
-          "Reported frame AUC 0.75 / AP 0.47 with event-level false alerts/hour (~20× lower than frame-level at best F1), threshold sensitivity, FP-burst analysis, and estimated reviewer minutes/hour.",
+          "Reported frame AUC 0.75 / AP 0.47 with event-level false alerts/hour (~20\u00d7 lower than frame-level at best F1), threshold sensitivity, FP-burst analysis, and estimated reviewer minutes/hour.",
           "Tech: Python, PyTorch, OpenCV, scikit-learn, matplotlib, SciPy"
         ],
         "images": [
@@ -499,7 +499,7 @@
         "date": "2026",
         "description": [
           "Analyzed retention signals across 2,200 synthetic subscribers and quantified $21.9K in monthly recurring revenue at risk.",
-          "Compared churn across contract, tenure, usage, and support-ticket segments using point-biserial correlation and bias-corrected Cramér's V.",
+          "Compared churn across contract, tenure, usage, and support-ticket segments using point-biserial correlation and bias-corrected Cram\u00e9r's V.",
           "Monthly contracts showed 28.8% churn versus 1.9% for two-year contracts, creating a clear retention hypothesis."
         ],
         "images": [
@@ -761,7 +761,7 @@
       {
         "company": "Thulo",
         "role": "Flutter Developer",
-        "date": "Mar 2025 – Oct 2025 · 8 mos",
+        "date": "Mar 2025 \u2013 Oct 2025 \u00b7 8 mos",
         "responsibilities": [
           "Developed cross-platform mobile experiences with Flutter in a product-focused technology environment.",
           "Applied structured debugging, reusable component design, and user-centered problem solving.",
@@ -771,7 +771,7 @@
       {
         "company": "Gaaubesi Logistics",
         "role": "Flutter Developer",
-        "date": "Mar 2024 – Mar 2025 · 1 yr 1 mo",
+        "date": "Mar 2024 \u2013 Mar 2025 \u00b7 1 yr 1 mo",
         "responsibilities": [
           "Contributed to mobile application development in a logistics-focused business environment.",
           "Worked with product requirements and application data flows to support usable digital experiences."
@@ -785,7 +785,7 @@
       {
         "institution": "University of the West of Scotland",
         "qualification": "Master's Degree, Information Technology with Data Analytics",
-        "date": "Jan 2026 – Present",
+        "date": "Jan 2026 \u2013 Present",
         "status": "Currently studying",
         "details": [
           "Postgraduate study spanning information technology, data analytics, and applied computing practice.",
@@ -795,7 +795,7 @@
       {
         "institution": "KIST",
         "qualification": "Bachelor in Information Technology (BIT)",
-        "date": "2021 – 2024",
+        "date": "2021 \u2013 2024",
         "details": [
           "Built a broad foundation in programming, databases, software development, and information systems.",
           "Developed the technical base now applied to Python, machine learning workflows, SQL, and business intelligence."
@@ -857,8 +857,8 @@
   },
   "cv": {
     "title": "View or Download My CV",
-    "description": "AI/ML · Data Science · Analytics | United Kingdom",
-    "file": "assets/cv/Sova_Kushwaha_Data_Analyst_CV.pdf",
+    "description": "AI/ML \u00b7 Computer Vision \u00b7 Data Science | United Kingdom",
+    "file": "assets/cv/Sova_Kushwaha_CV.pdf",
     "download_label": "Download CV",
     "open_label": "Preview CV"
   },
