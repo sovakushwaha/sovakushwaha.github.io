@@ -78,17 +78,24 @@
         "badges": [
           {
             "name": "Springer",
-            "url": "https://www.springer.com/"
+            "logo": "assets/research/springer-logo.svg",
+            "url": "https://www.springer.com/",
+            "invert_in_dark": true
           },
           {
             "name": "CCIS",
-            "url": "https://www.springer.com/series/7899"
+            "logo": "assets/research/ccis-badge.svg",
+            "url": "https://www.springer.com/series/7899",
+            "invert_in_dark": true
           },
           {
-            "name": "CISCom 2026"
+            "name": "CISCom 2026",
+            "logo": "assets/research/ciscom-badge.svg",
+            "invert_in_dark": true
           },
           {
             "name": "Scopus",
+            "logo": "assets/research/scopus-badge.svg",
             "url": "https://www.scopus.com/"
           }
         ],

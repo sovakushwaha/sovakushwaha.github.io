@@ -812,12 +812,23 @@ class SectionManager {
             const logos = (item.badges || []).map(badge => {
                 const name = this.escapeHtml(badge.name || '');
                 if (!name) return '';
+                const logo = this.safeUrl(badge.logo);
                 const href = this.safeUrl(badge.url);
-                const inner = `<span class="research-logo-text">${name}</span>`;
+                const darken = badge.invert_in_dark ? ' research-logo-darken' : '';
+                const img = logo
+                    ? `<img class="${darken.trim()}" src="${logo}" alt="${name}" loading="lazy" decoding="async">`
+                    : '';
+                const label = badge.show_label
+                    ? `<span class="research-logo-label">${this.escapeHtml(badge.caption || badge.name || '')}</span>`
+                    : '';
+                const textFallback = !logo
+                    ? `<span class="research-logo-text">${name}</span>`
+                    : '';
+                const inner = `${img}${label}${textFallback}`;
                 if (href) {
-                    return `<a class="research-logo" href="${href}" target="_blank" rel="noopener noreferrer">${inner}</a>`;
+                    return `<a class="research-logo" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${name}">${inner}</a>`;
                 }
-                return `<span class="research-logo">${inner}</span>`;
+                return `<span class="research-logo" aria-label="${name}">${inner}</span>`;
             }).join('');
 
             const filename = this.escapeHtml(item.filename || 'publication.md');
