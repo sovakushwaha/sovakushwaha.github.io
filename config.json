@@ -28,7 +28,7 @@
   },
   "header": {
     "greeting": "Sova Kushwaha",
-    "tagline": "Building intelligent systems and clear insights from data",
+    "tagline": "Applied AI researcher in computer vision and deep learning",
     "email": "mahatosova618@gmail.com",
     "profile_image": "assets/profile/sova-kushwaha.jpg"
   },
@@ -874,6 +874,6 @@
   "footer": {
     "show_social_links": true,
     "availability_label": "Open to AI/ML, Data Science & Analytics roles",
-    "tagline": "Based in the United Kingdom and open to AI/ML, data science, and analytics opportunities."
+    "tagline": "Based in the UK. Open to AI/ML, computer vision, and data science roles."
   }
 }
