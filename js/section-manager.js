@@ -178,15 +178,31 @@ export class SectionManager {
                 return `<span class="research-logo">${inner}</span>`;
             }).join('');
 
-            const status = this.escapeHtml(item.status || '');
-            const mode = this.escapeHtml(item.mode || '');
+            const filename = this.escapeHtml(item.filename || 'publication.md');
+            const venue = this.escapeHtml(item.venue || item.status || '');
+            const statusText = this.escapeHtml(
+                item.status_label || item.mode || 'Accepted for oral presentation'
+            );
+            const year = this.escapeHtml(item.year || '');
+
+            const metaRows = [
+                venue ? { key: 'venue', value: venue } : null,
+                statusText ? { key: 'status', value: statusText } : null,
+                year ? { key: 'year', value: year } : null
+            ].filter(Boolean).map(row => `
+                <div class="research-meta-row">
+                    <span class="research-meta-key">${row.key}</span>
+                    <span class="research-meta-value">${row.value}</span>
+                </div>
+            `).join('');
 
             card.innerHTML = `
+                <div class="research-filebar" aria-hidden="true">
+                    <span class="research-filebar-dots"><span></span><span></span><span></span></span>
+                    <span class="research-filename">${filename}</span>
+                </div>
                 <div class="research-body">
-                    <div class="research-kicker">
-                        ${status ? `<span class="research-status">${status}</span>` : ''}
-                        ${mode ? `<span class="research-kicker-meta">${mode}</span>` : ''}
-                    </div>
+                    ${metaRows ? `<div class="research-meta">${metaRows}</div>` : ''}
                     <h3 class="research-paper-title">${this.escapeHtml(item.title || '')}</h3>
                     ${item.citation ? `<p class="research-citation">${this.escapeHtml(item.citation)}</p>` : ''}
                     ${item.summary ? `<p class="research-summary">${this.escapeHtml(item.summary)}</p>` : ''}

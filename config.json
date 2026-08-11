@@ -68,9 +68,10 @@
     "intro": "",
     "items": [
       {
+        "filename": "publication.md",
         "year": "2026",
-        "status": "CISCom 2026",
-        "mode": "Oral · Springer CCIS · Scopus",
+        "venue": "CISCom 2026",
+        "status_label": "Accepted for oral presentation",
         "title": "An Explainable VGG6 Convolutional Neural Network for Multi-Class Ovarian Cyst Classification in Ultrasound Imaging",
         "citation": "2nd International Conference on Computational Intelligence and Soft Computing (CISCom 2026), Malta. Forthcoming in Springer Communications in Computer and Information Science (CCIS), Scopus-indexed.",
         "summary": "An explainable VGG6 CNN for multi-class ovarian cyst classification from ultrasound images, pairing deep-learning performance with interpretability to support clinical decision-making.",
