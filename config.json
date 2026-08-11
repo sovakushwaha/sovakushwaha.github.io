@@ -63,37 +63,31 @@
     ]
   },
   "research": {
-    "eyebrow": "Research & Publications",
+    "eyebrow": "Research",
     "title": "Peer-Reviewed Research",
-    "intro": "Selected conference research in explainable deep learning for medical ultrasound imaging.",
+    "intro": "",
     "items": [
       {
         "year": "2026",
-        "status": "Accepted",
-        "mode": "Oral presentation · Malta",
+        "status": "CISCom 2026",
+        "mode": "Oral · Springer CCIS · Scopus",
         "title": "An Explainable VGG6 Convolutional Neural Network for Multi-Class Ovarian Cyst Classification in Ultrasound Imaging",
-        "citation": "CISCom 2026 — 2nd International Conference on Computational Intelligence and Soft Computing. Forthcoming in Springer Communications in Computer and Information Science (CCIS), Scopus-indexed.",
+        "citation": "2nd International Conference on Computational Intelligence and Soft Computing (CISCom 2026), Malta. Forthcoming in Springer Communications in Computer and Information Science (CCIS), Scopus-indexed.",
         "summary": "An explainable VGG6 CNN for multi-class ovarian cyst classification from ultrasound images, pairing deep-learning performance with interpretability to support clinical decision-making.",
         "badges": [
           {
             "name": "Springer",
-            "logo": "assets/research/springer-logo.svg",
-            "url": "https://www.springer.com/",
-            "invert_in_dark": true
+            "url": "https://www.springer.com/"
           },
           {
             "name": "CCIS",
-            "logo": "assets/research/ccis-badge.svg",
-            "url": "https://www.springer.com/series/7899",
-            "invert_in_dark": true
+            "url": "https://www.springer.com/series/7899"
           },
           {
-            "name": "CISCom 2026",
-            "logo": "assets/research/ciscom-badge.svg"
+            "name": "CISCom 2026"
           },
           {
             "name": "Scopus",
-            "logo": "assets/research/scopus-badge.svg",
             "url": "https://www.scopus.com/"
           }
         ],

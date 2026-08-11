@@ -145,9 +145,12 @@ export class SectionManager {
         const eyebrow = section.querySelector('.research-eyebrow');
         const title = section.querySelector('#research-title');
         const intro = section.querySelector('.research-intro');
-        if (eyebrow) eyebrow.textContent = research.eyebrow || '';
+        if (eyebrow) eyebrow.textContent = research.eyebrow || 'Research';
         if (title) title.textContent = research.title || '';
-        if (intro) intro.textContent = research.intro || '';
+        if (intro) {
+            intro.textContent = research.intro || '';
+            intro.hidden = !research.intro;
+        }
 
         list.replaceChildren();
         const fragment = document.createDocumentFragment();
@@ -159,50 +162,30 @@ export class SectionManager {
             const highlights = (item.highlights || [])
                 .map(point => `<li>${this.escapeHtml(point)}</li>`)
                 .join('');
+
             const topics = (item.topics || [])
                 .map(topic => `<span>${this.escapeHtml(topic)}</span>`)
                 .join('');
 
             const logos = (item.badges || []).map(badge => {
-                const logo = this.safeUrl(badge.logo);
-                if (!logo) return '';
+                const name = this.escapeHtml(badge.name || '');
+                if (!name) return '';
                 const href = this.safeUrl(badge.url);
-                const darken = badge.invert_in_dark ? ' research-logo-darken' : '';
-                const img = `<img class="${darken.trim()}" src="${logo}" alt="${this.escapeHtml(badge.name || 'Publisher')}" loading="lazy" decoding="async">`;
-                const label = badge.show_label
-                    ? `<span class="research-logo-label">${this.escapeHtml(badge.caption || badge.name || '')}</span>`
-                    : '';
-                const inner = `${img}${label}`;
+                const inner = `<span class="research-logo-text">${name}</span>`;
                 if (href) {
-                    return `<a class="research-logo" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${this.escapeHtml(badge.name || 'Publisher')}">${inner}</a>`;
+                    return `<a class="research-logo" href="${href}" target="_blank" rel="noopener noreferrer">${inner}</a>`;
                 }
-                return `<div class="research-logo" aria-label="${this.escapeHtml(badge.name || 'Publisher')}">${inner}</div>`;
+                return `<span class="research-logo">${inner}</span>`;
             }).join('');
 
-            const year = this.escapeHtml(item.year || '2026');
             const status = this.escapeHtml(item.status || '');
-            const mode = this.escapeHtml(item.mode || 'Oral presentation');
+            const mode = this.escapeHtml(item.mode || '');
 
             card.innerHTML = `
-                <aside class="research-rail" aria-hidden="true">
-                    <div class="research-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                            <g class="research-book">
-                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                <path class="research-book-page" d="M12 2v20"></path>
-                                <path d="M8 7h4"></path>
-                                <path d="M8 11h3"></path>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="research-year">${year}</div>
-                </aside>
                 <div class="research-body">
                     <div class="research-kicker">
-                        <span class="research-status">${status}</span>
-                        <span class="research-kicker-sep" aria-hidden="true"></span>
-                        <span class="research-kicker-meta">${mode}</span>
+                        ${status ? `<span class="research-status">${status}</span>` : ''}
+                        ${mode ? `<span class="research-kicker-meta">${mode}</span>` : ''}
                     </div>
                     <h3 class="research-paper-title">${this.escapeHtml(item.title || '')}</h3>
                     ${item.citation ? `<p class="research-citation">${this.escapeHtml(item.citation)}</p>` : ''}
