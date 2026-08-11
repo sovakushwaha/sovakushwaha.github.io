@@ -68,40 +68,39 @@
     "intro": "Selected conference research in explainable deep learning for medical ultrasound imaging.",
     "items": [
       {
-        "status": "Accepted for Oral Presentation · 2025 / 2026",
+        "year": "2026",
+        "status": "Accepted",
+        "mode": "Oral presentation · Malta",
         "title": "An Explainable VGG6 Convolutional Neural Network for Multi-Class Ovarian Cyst Classification in Ultrasound Imaging",
-        "venue": "2nd International Conference on Computational Intelligence and Soft Computing (CISCom 2026), Malta",
-        "publication": "Springer Communications in Computer and Information Science (CCIS), Scopus-indexed",
-        "summary": "This paper presents an explainable VGG6 convolutional neural network for multi-class ovarian cyst classification from ultrasound images, combining deep learning performance with interpretability to support clinical decision-making.",
+        "citation": "CISCom 2026 — 2nd International Conference on Computational Intelligence and Soft Computing. Forthcoming in Springer Communications in Computer and Information Science (CCIS), Scopus-indexed.",
+        "summary": "An explainable VGG6 CNN for multi-class ovarian cyst classification from ultrasound images, pairing deep-learning performance with interpretability to support clinical decision-making.",
         "badges": [
           {
             "name": "Springer",
-            "caption": "Publisher",
             "logo": "assets/research/springer-logo.svg",
-            "url": "https://www.springer.com/"
+            "url": "https://www.springer.com/",
+            "invert_in_dark": true
           },
           {
             "name": "CCIS",
-            "caption": "Series",
             "logo": "assets/research/ccis-badge.svg",
-            "url": "https://www.springer.com/series/7899"
+            "url": "https://www.springer.com/series/7899",
+            "invert_in_dark": true
           },
           {
             "name": "CISCom 2026",
-            "caption": "Conference",
             "logo": "assets/research/ciscom-badge.svg"
           },
           {
             "name": "Scopus",
-            "caption": "Indexed",
             "logo": "assets/research/scopus-badge.svg",
             "url": "https://www.scopus.com/"
           }
         ],
         "highlights": [
-          "Designed and evaluated an explainable VGG6 CNN for multi-class ovarian cyst classification in ultrasound imaging.",
-          "Focused on both predictive performance and model interpretability for safer clinical use of AI.",
-          "Accepted for oral presentation at an international conference and for publication in Springer CCIS."
+          "Designed and evaluated an explainable VGG6 architecture for multi-class ultrasound classification.",
+          "Emphasised interpretability alongside accuracy for safer clinical use of AI models.",
+          "Accepted for international oral presentation and Springer CCIS publication."
         ],
         "topics": [
           "Computer Vision",

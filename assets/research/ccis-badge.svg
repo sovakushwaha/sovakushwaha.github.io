@@ -1,5 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 48" role="img" aria-label="Springer CCIS">
-  <rect width="160" height="48" rx="8" fill="#0B2754"/>
-  <text x="14" y="20" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="0.08em">SPRINGER</text>
-  <text x="14" y="36" fill="#7EB6FF" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600">CCIS Series</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 28" role="img" aria-label="CCIS">
+  <text x="0" y="19" fill="#0B2754" font-family="Outfit, Inter, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="0.08em">CCIS</text>
 </svg>

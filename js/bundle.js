@@ -805,34 +805,56 @@ class SectionManager {
                 .map(topic => `<span>${this.escapeHtml(topic)}</span>`)
                 .join('');
 
-            const badges = (item.badges || []).map(badge => {
+            const logos = (item.badges || []).map(badge => {
                 const logo = this.safeUrl(badge.logo);
-                const href = this.safeUrl(badge.url);
                 if (!logo) return '';
-                const inner = `
-                    <img src="${logo}" alt="${this.escapeHtml(badge.name || 'Venue logo')}" loading="lazy" decoding="async">
-                    <span>${this.escapeHtml(badge.caption || badge.name || '')}</span>
-                `;
+                const href = this.safeUrl(badge.url);
+                const darken = badge.invert_in_dark ? ' research-logo-darken' : '';
+                const img = `<img class="${darken.trim()}" src="${logo}" alt="${this.escapeHtml(badge.name || 'Publisher')}" loading="lazy" decoding="async">`;
+                const label = badge.show_label
+                    ? `<span class="research-logo-label">${this.escapeHtml(badge.caption || badge.name || '')}</span>`
+                    : '';
+                const inner = `${img}${label}`;
                 if (href) {
-                    return `<a class="research-badge" href="${href}" target="_blank" rel="noopener noreferrer">${inner}</a>`;
+                    return `<a class="research-logo" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${this.escapeHtml(badge.name || 'Publisher')}">${inner}</a>`;
                 }
-                return `<div class="research-badge">${inner}</div>`;
+                return `<div class="research-logo" aria-label="${this.escapeHtml(badge.name || 'Publisher')}">${inner}</div>`;
             }).join('');
 
+            const year = this.escapeHtml(item.year || '2026');
+            const status = this.escapeHtml(item.status || '');
+            const mode = this.escapeHtml(item.mode || 'Oral presentation');
+
             card.innerHTML = `
-                <div class="research-status">
-                    <span class="research-status-dot" aria-hidden="true"></span>
-                    <span>${this.escapeHtml(item.status || '')}</span>
+                <aside class="research-rail" aria-hidden="true">
+                    <div class="research-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                            <g class="research-book">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                <path class="research-book-page" d="M12 2v20"></path>
+                                <path d="M8 7h4"></path>
+                                <path d="M8 11h3"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="research-year">${year}</div>
+                </aside>
+                <div class="research-body">
+                    <div class="research-kicker">
+                        <span class="research-status">${status}</span>
+                        <span class="research-kicker-sep" aria-hidden="true"></span>
+                        <span class="research-kicker-meta">${mode}</span>
+                    </div>
+                    <h3 class="research-paper-title">${this.escapeHtml(item.title || '')}</h3>
+                    ${item.citation ? `<p class="research-citation">${this.escapeHtml(item.citation)}</p>` : ''}
+                    ${item.summary ? `<p class="research-summary">${this.escapeHtml(item.summary)}</p>` : ''}
+                    ${highlights ? `<ul class="research-highlights">${highlights}</ul>` : ''}
+                    <div class="research-footer">
+                        ${logos ? `<div class="research-logos" aria-label="Publication bodies">${logos}</div>` : ''}
+                        ${topics ? `<div class="research-topics" aria-label="Research topics">${topics}</div>` : ''}
+                    </div>
                 </div>
-                <h3 class="research-paper-title">${this.escapeHtml(item.title || '')}</h3>
-                ${badges ? `<div class="research-badges" aria-label="Publication bodies">${badges}</div>` : ''}
-                <div class="research-meta">
-                    ${item.venue ? `<p><strong>Venue:</strong> ${this.escapeHtml(item.venue)}</p>` : ''}
-                    ${item.publication ? `<p><strong>Publication:</strong> ${this.escapeHtml(item.publication)}</p>` : ''}
-                </div>
-                ${item.summary ? `<p class="research-summary">${this.escapeHtml(item.summary)}</p>` : ''}
-                ${highlights ? `<ul class="research-highlights">${highlights}</ul>` : ''}
-                ${topics ? `<div class="research-topics" aria-label="Research topics">${topics}</div>` : ''}
             `;
             fragment.appendChild(card);
         });
