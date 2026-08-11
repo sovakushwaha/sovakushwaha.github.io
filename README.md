@@ -1,4 +1,4 @@
-# Sova Kushwaha | Data Analyst Portfolio
+# Sova Kushwaha | AI/ML, Data Science & Analytics Portfolio
 
 Personal portfolio website for [Sova Kushwaha](https://github.com/sovakushwaha), built for GitHub Pages.
 
@@ -12,8 +12,9 @@ Sova is pursuing a Master's Degree in Information Technology with Data Analytics
 
 ## Focus
 
-The portfolio presents applied analytics and Power BI projects covering:
+The portfolio presents applied AI/ML, data science, analytics, and Power BI work covering:
 
+- PyTorch, computer vision, and practical model evaluation
 - Python, pandas, and NumPy
 - SQL, SQLite, and relational data modeling
 - Power BI, Power Query, and DAX dashboards
@@ -21,10 +22,12 @@ The portfolio presents applied analytics and Power BI projects covering:
 - Exploratory analysis and statistical testing
 - Customer segmentation, churn, sales, and operational KPIs
 - matplotlib, seaborn, Plotly, Streamlit, and Jupyter
-- Business-focused interpretation and recommendations
+- Clear communication of methods, limits, and recommendations
 
 ## Featured work
 
+- [Avenue False-Alert & Practical Reliability](https://github.com/sovakushwaha/avenue-false-alert-reliability)
+- [Enterprise BI 360 (Power BI)](https://github.com/sovakushwaha/enterprise-bi-360-powerbi)
 - [HR Employee Analytics (Power BI)](https://github.com/sovakushwaha/hr-employee-analytics-powerbi)
 - [Finance KPI Dashboard (Power BI)](https://github.com/sovakushwaha/finance-kpi-dashboard-powerbi)
 - [Healthcare Visitor Analytics (Power BI)](https://github.com/sovakushwaha/healthcare-visitor-analytics-powerbi)
@@ -38,15 +41,8 @@ The portfolio presents applied analytics and Power BI projects covering:
 
 ## Local preview
 
-```bash
-npm run validate
-npm run build
-python3 -m http.server 8000
-```
+Open `index.html` in a browser, or serve the folder with any static file server.
 
-Open the local URL printed by the server.
+## Configuration
 
-## Credits
-
-Adapted from the MIT-licensed [Developer Portfolio](https://github.com/yashrajnayak/developer-portfolio) template by Yashraj Nayak.
-
+Portfolio content is driven by `config.json`. See `docs/CONFIGURATION.md` for details.

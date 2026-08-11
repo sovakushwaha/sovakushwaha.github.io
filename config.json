@@ -13,11 +13,11 @@
   },
   "site": {
     "title": "Sova Kushwaha",
-    "description": "Data Analyst Portfolio",
+    "description": "AI/ML, Data Science & Analytics Portfolio",
     "seo": {
-      "title": "Sova Kushwaha | Data Analyst Portfolio",
-      "description": "Data analyst portfolio featuring Python, SQL, statistical analysis, ETL pipelines, dashboards, and business-focused insights.",
-      "keywords": "Sova Kushwaha, data analyst, Power BI, DAX, data science, artificial intelligence, machine learning, YouTube tutor, Python, SQL, pandas, SQLite, data visualization, exploratory data analysis, business intelligence, portfolio",
+      "title": "Sova Kushwaha | AI/ML, Data Science & Analytics",
+      "description": "Portfolio of applied AI/ML, data science, and analytics work: PyTorch, computer vision, Python, SQL, statistical analysis, ETL pipelines, and Power BI dashboards.",
+      "keywords": "Sova Kushwaha, artificial intelligence, machine learning, data science, data analyst, computer vision, PyTorch, deep learning, Power BI, DAX, Python, SQL, pandas, model evaluation, trustworthy AI, YouTube tutor, portfolio",
       "author": "Sova Kushwaha",
       "og_image": "https://sovakushwaha.github.io/assets/profile/sova-kushwaha.jpg",
       "og_image_alt": "Professional portrait of Sova Kushwaha",
@@ -27,7 +27,7 @@
   },
   "header": {
     "greeting": "Sova Kushwaha",
-    "tagline": "Data Analyst | Python, SQL & Business Insights",
+    "tagline": "AI/ML · Data Science · Analytics | Python, PyTorch & SQL",
     "email": "mahatosova618@gmail.com",
     "profile_image": "assets/profile/sova-kushwaha.jpg"
   },
@@ -57,25 +57,25 @@
   "github_username": "sovakushwaha",
   "about": {
     "paragraphs": [
-      "I am a BIT graduate currently pursuing a Master's Degree in Information Technology with Data Analytics at the University of the West of Scotland. I am transitioning into data analytics with a practical portfolio built around Python, SQL, statistical analysis, data visualization, and business storytelling. My work focuses on turning imperfect datasets into clear metrics, defensible insights, and recommendations that decision-makers can act on.",
-      "My software-development background in Flutter gives me a strong foundation in structured problem solving, reusable code, testing, and user-focused communication. Across ten end-to-end analytics projects, I have built reproducible ETL workflows, SQLite data models, exploratory analyses, KPI reports, customer segments, statistical tests, and interactive dashboards using synthetic data."
+      "I am a BIT graduate currently pursuing a Master's Degree in Information Technology with Data Analytics at the University of the West of Scotland. My work sits across AI/ML, data science, and analytics: from model-based evaluation and computer vision experiments to Python/SQL analysis, statistical testing, and dashboard storytelling. I care about results that are reproducible, honest about limitations, and useful to the people who need to act on them.",
+      "My Flutter software background gives me structured problem solving, reusable code, testing, and user-focused communication. Across my portfolio I have built PyTorch evaluation pipelines, ETL workflows, SQLite data models, exploratory analyses, KPI reports, segmentation studies, and Power BI dashboards, with clear documentation so others can follow the method as well as the headline numbers."
     ]
   },
   "why_hire": {
     "title": "Why You Should Hire Me",
-    "intro": "Five evidence-based reasons I can add value as an early-career Data Analyst.",
+    "intro": "Five evidence-based reasons I can add value in AI/ML, data science, and analytics roles.",
     "items": [
       {
-        "question": "Why should you hire me for a Data Analyst role?",
-        "answer": "I combine practical analytics capability with software-engineering discipline. My portfolio demonstrates reproducible analytics work in Python and SQL: ETL and data-quality checks, statistical testing, KPI design, segmentation, visualisation, and dashboards that turn evidence into clear, defensible business insights. I am UK-based and ready to bring that structured approach to an entry-level Data Analyst opportunity."
+        "question": "Why should you hire me for AI/ML, data science, or analytics roles?",
+        "answer": "I combine model-aware thinking with software-engineering discipline and practical analytics. My portfolio spans PyTorch computer-vision evaluation, statistical analysis in Python and SQL, ETL and data-quality checks, KPI design, and dashboards that turn evidence into clear decisions. I am UK-based and ready to contribute where teams need reliable analysis and thoughtful machine learning practice."
       },
       {
         "question": "What makes me different from a typical fresh graduate?",
         "answer": "Alongside my BIT degree and current Master's study in Information Technology with Data Analytics, I bring professional experience as a Flutter Developer at Gaaubesi Logistics and Thulo. That background taught me to work from requirements, debug systematically, write reusable code, test my work, use version control, and think about the person using the final product, not only the technology behind it."
       },
       {
-        "question": "How do I turn data into business value?",
-        "answer": "I start with the decision a stakeholder needs to make, then connect data quality, appropriate analysis, and meaningful KPIs to that decision. My projects cover sales and margin, retention, customer value, service operations, and other business questions. I communicate assumptions and limitations, including the use of synthetic data, so recommendations remain useful without overstating what the evidence proves."
+        "question": "How do I turn data and models into real value?",
+        "answer": "I start with the decision or risk a stakeholder needs to manage, then choose the right level of method: exploration, statistics, dashboards, or model evaluation. My projects cover sales and retention questions as well as practical reliability in video anomaly detection, where false alerts and reviewer burden matter as much as AUC. I communicate assumptions and limitations so findings stay useful without overclaiming."
       },
       {
         "question": "Can I work effectively with technical and non-technical teams?",
@@ -83,7 +83,7 @@
       },
       {
         "question": "How quickly can I learn and contribute?",
-        "answer": "My move from mobile development into analytics demonstrates that I can transfer skills and build new capability deliberately. I have progressed from programming and databases in my BIT to ten tested analytics projects and current postgraduate study, while documenting what I learn. I contribute reliably by breaking unfamiliar problems into manageable steps, validating outputs, seeking context early, and improving through feedback."
+        "answer": "My move from mobile development into data science and machine learning shows I can transfer skills and build new capability deliberately. I have progressed from programming and databases in my BIT to applied AI/ML and analytics projects and current postgraduate study, while documenting what I learn. I contribute reliably by breaking unfamiliar problems into manageable steps, validating outputs, seeking context early, and improving through feedback."
       }
     ]
   },
@@ -293,7 +293,7 @@
     ]
   },
   "projects": {
-    "title": "Python & SQL Analytics Projects",
+    "title": "AI/ML, Data Science & Analytics Projects",
     "items": [
       {
         "name": "False-Alert & Practical Reliability (Video Analytics)",
@@ -719,7 +719,7 @@
         "responsibilities": [
           "Developed cross-platform mobile experiences with Flutter in a product-focused technology environment.",
           "Applied structured debugging, reusable component design, and user-centered problem solving.",
-          "Extended this software-engineering foundation into reproducible data workflows and analytical products."
+          "Extended this software-engineering foundation into reproducible data science, machine learning, and analytics work."
         ]
       },
       {
@@ -742,8 +742,8 @@
         "date": "Jan 2026 – Present",
         "status": "Currently studying",
         "details": [
-          "Currently pursuing postgraduate study in information technology with a data analytics specialization.",
-          "Developing advanced knowledge at the intersection of technology, data analysis, and evidence-based decision-making."
+          "Postgraduate study spanning information technology, data analytics, and applied computing practice.",
+          "Building depth across data science methods, evidence-based decision-making, and practical AI/ML evaluation."
         ]
       },
       {
@@ -752,45 +752,46 @@
         "date": "2021 – 2024",
         "details": [
           "Built a broad foundation in programming, databases, software development, and information systems.",
-          "Developed the technical base now applied to Python, SQL, data analysis, and business intelligence."
+          "Developed the technical base now applied to Python, machine learning workflows, SQL, and business intelligence."
         ]
       }
     ]
   },
   "skills": {
-    "title": "Data Analytics Skills",
+    "title": "AI/ML, Data Science & Analytics Skills",
     "categories": [
       {
-        "name": "Analysis & Programming",
+        "name": "Machine Learning & AI",
+        "items": [
+          "PyTorch",
+          "Computer Vision",
+          "CNNs and Autoencoders",
+          "Model Evaluation (AUC, AP, operating points)",
+          "False-Alert and Reliability Analysis",
+          "scikit-learn",
+          "Experiment Tracking and Reproducibility"
+        ]
+      },
+      {
+        "name": "Data Science & Analysis",
         "items": [
           "Python",
           "pandas and NumPy",
           "Exploratory Data Analysis",
-          "Data Cleaning and Validation",
           "Feature Engineering",
-          "Statistical Testing"
+          "Statistical Testing",
+          "Data Cleaning and Validation"
         ]
       },
       {
-        "name": "SQL & Data Workflows",
+        "name": "SQL, BI & Visualization",
         "items": [
           "SQL and SQLite",
-          "Relational Data Modeling",
           "ETL Pipelines",
-          "KPI Development",
-          "RFM Segmentation",
-          "Data Quality Checks"
-        ]
-      },
-      {
-        "name": "Visualization & Communication",
-        "items": [
           "Power BI, Power Query, and DAX",
           "matplotlib and seaborn",
           "Streamlit and Plotly",
-          "Jupyter Notebooks",
-          "Dashboard Design",
-          "Business Storytelling",
+          "KPI Design and Dashboard Storytelling",
           "Git and GitHub"
         ]
       },
@@ -808,13 +809,13 @@
   },
   "cv": {
     "title": "View or Download My CV",
-    "description": "Data Analyst | United Kingdom",
+    "description": "AI/ML · Data Science · Analytics | United Kingdom",
     "file": "assets/cv/Sova_Kushwaha_Data_Analyst_CV.pdf",
     "download_label": "Download CV",
     "open_label": "Preview CV"
   },
   "github_projects": {
-    "title": "More Analytics Work on GitHub",
+    "title": "More AI/ML & Analytics Work on GitHub",
     "mode": "feed",
     "source_url": "assets/data/analytics-repos.json",
     "max_repos": 15,
@@ -824,7 +825,7 @@
   },
   "footer": {
     "show_social_links": true,
-    "availability_label": "Available for Data Analyst roles",
-    "tagline": "Based in the United Kingdom and open to Data Analyst opportunities."
+    "availability_label": "Open to AI/ML, Data Science & Analytics roles",
+    "tagline": "Based in the United Kingdom and open to AI/ML, data science, and analytics opportunities."
   }
 }
