@@ -763,13 +763,15 @@
       {
         "name": "Machine Learning & AI",
         "items": [
-          "PyTorch",
+          "PyTorch and TensorFlow basics",
           "Computer Vision",
-          "CNNs and Autoencoders",
-          "Model Evaluation (AUC, AP, operating points)",
-          "False-Alert and Reliability Analysis",
+          "Natural Language Processing (NLP)",
+          "CNNs, Transformers, and Autoencoders",
+          "Supervised and Unsupervised Learning",
+          "Model Training and Evaluation",
+          "Feature Extraction and Embeddings",
           "scikit-learn",
-          "Experiment Tracking and Reproducibility"
+          "Jupyter and Experiment Reproducibility"
         ]
       },
       {
