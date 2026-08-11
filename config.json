@@ -1,6 +1,7 @@
 {
   "features": {
     "about": true,
+    "research": true,
     "why_hire": true,
     "passion": true,
     "projects": true,
@@ -59,6 +60,32 @@
     "paragraphs": [
       "I am a BIT graduate currently pursuing a Master's Degree in Information Technology with Data Analytics at the University of the West of Scotland. My work sits across AI/ML, data science, and analytics: from model-based evaluation and computer vision experiments to Python/SQL analysis, statistical testing, and dashboard storytelling. I care about results that are reproducible, honest about limitations, and useful to the people who need to act on them.",
       "My Flutter software background gives me structured problem solving, reusable code, testing, and user-focused communication. Across my portfolio I have built PyTorch evaluation pipelines, ETL workflows, SQLite data models, exploratory analyses, KPI reports, segmentation studies, and Power BI dashboards, with clear documentation so others can follow the method as well as the headline numbers."
+    ]
+  },
+  "research": {
+    "eyebrow": "Research & Publications",
+    "title": "Peer-Reviewed Research",
+    "intro": "Selected conference research in explainable deep learning for medical ultrasound imaging.",
+    "items": [
+      {
+        "status": "Accepted for Oral Presentation · 2025 / 2026",
+        "title": "An Explainable VGG6 Convolutional Neural Network for Multi-Class Ovarian Cyst Classification in Ultrasound Imaging",
+        "venue": "2nd International Conference on Computational Intelligence and Soft Computing (CISCom 2026), Malta",
+        "publication": "Springer Communications in Computer and Information Science (CCIS), Scopus-indexed",
+        "summary": "This paper presents an explainable VGG6 convolutional neural network for multi-class ovarian cyst classification from ultrasound images, combining deep learning performance with interpretability to support clinical decision-making.",
+        "highlights": [
+          "Designed and evaluated an explainable VGG6 CNN for multi-class ovarian cyst classification in ultrasound imaging.",
+          "Focused on both predictive performance and model interpretability for safer clinical use of AI.",
+          "Accepted for oral presentation at an international conference and for publication in Springer CCIS."
+        ],
+        "topics": [
+          "Computer Vision",
+          "Deep Learning",
+          "Explainable AI",
+          "Medical Imaging",
+          "Ultrasound Analysis"
+        ]
+      }
     ]
   },
   "why_hire": {

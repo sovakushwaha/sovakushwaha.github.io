@@ -1,7 +1,7 @@
 {
   "name": "Sova Kushwaha",
   "short_name": "Sova Kushwaha",
-  "description": "AI/ML, data science, and analytics portfolio featuring PyTorch, Python, SQL, statistical analysis, ETL pipelines, and Power BI dashboards.",
+  "description": "Portfolio of applied AI/ML, data science, and analytics work: PyTorch, computer vision, Python, SQL, statistical analysis, ETL pipelines, and Power BI dashboards.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

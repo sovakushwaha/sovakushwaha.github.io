@@ -688,6 +688,7 @@ class SectionManager {
     updatePageContent(config) {
         const features = {
             about: true,
+            research: true,
             why_hire: true,
             passion: true,
             powerbi_projects: true,
@@ -701,6 +702,7 @@ class SectionManager {
         };
 
         this.toggleSection('about', features.about);
+        this.toggleSection('research', features.research);
         this.toggleSection('why-hire', features.why_hire);
         this.toggleSection('passion', features.passion);
         this.toggleSection('powerbi-projects', features.powerbi_projects);
@@ -713,6 +715,10 @@ class SectionManager {
 
         if (features.about) {
             this.updateAboutSection(config);
+        }
+
+        if (features.research) {
+            this.updateResearchSection(config);
         }
 
         if (features.why_hire) {
@@ -770,6 +776,50 @@ class SectionManager {
         } else {
             aboutSection.innerHTML = '<p>Welcome to my portfolio.</p>';
         }
+    }
+
+    updateResearchSection(config) {
+        const section = document.querySelector('.research');
+        const list = section?.querySelector('.research-list');
+        const research = config.research;
+        if (!section || !list || !research) return;
+
+        const eyebrow = section.querySelector('.research-eyebrow');
+        const title = section.querySelector('#research-title');
+        const intro = section.querySelector('.research-intro');
+        if (eyebrow) eyebrow.textContent = research.eyebrow || '';
+        if (title) title.textContent = research.title || '';
+        if (intro) intro.textContent = research.intro || '';
+
+        list.replaceChildren();
+        const fragment = document.createDocumentFragment();
+
+        (research.items || []).forEach(item => {
+            const card = document.createElement('article');
+            card.className = 'research-card';
+
+            const highlights = (item.highlights || [])
+                .map(point => `<li>${this.escapeHtml(point)}</li>`)
+                .join('');
+            const topics = (item.topics || [])
+                .map(topic => `<span>${this.escapeHtml(topic)}</span>`)
+                .join('');
+
+            card.innerHTML = `
+                <div class="research-status">${this.escapeHtml(item.status || '')}</div>
+                <h3 class="research-paper-title">${this.escapeHtml(item.title || '')}</h3>
+                <div class="research-meta">
+                    ${item.venue ? `<p><strong>Venue:</strong> ${this.escapeHtml(item.venue)}</p>` : ''}
+                    ${item.publication ? `<p><strong>Publication:</strong> ${this.escapeHtml(item.publication)}</p>` : ''}
+                </div>
+                ${item.summary ? `<p class="research-summary">${this.escapeHtml(item.summary)}</p>` : ''}
+                ${highlights ? `<ul class="research-highlights">${highlights}</ul>` : ''}
+                ${topics ? `<div class="research-topics" aria-label="Research topics">${topics}</div>` : ''}
+            `;
+            fragment.appendChild(card);
+        });
+
+        list.appendChild(fragment);
     }
 
     updateWhyHireSection(config) {
