@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 48" role="img" aria-label="CISCom 2026">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="48" rx="8" fill="url(#g)"/>
+  <circle cx="24" cy="24" r="10" fill="none" stroke="#fff" stroke-width="2"/>
+  <path d="M19 24h10M24 19v10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <text x="42" y="20" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">CISCom 2026</text>
+  <text x="42" y="36" fill="#DBEAFE" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="500">Malta · Oral Paper</text>
+</svg>

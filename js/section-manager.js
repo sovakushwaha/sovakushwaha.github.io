@@ -163,9 +163,27 @@ export class SectionManager {
                 .map(topic => `<span>${this.escapeHtml(topic)}</span>`)
                 .join('');
 
+            const badges = (item.badges || []).map(badge => {
+                const logo = this.safeUrl(badge.logo);
+                const href = this.safeUrl(badge.url);
+                if (!logo) return '';
+                const inner = `
+                    <img src="${logo}" alt="${this.escapeHtml(badge.name || 'Venue logo')}" loading="lazy" decoding="async">
+                    <span>${this.escapeHtml(badge.caption || badge.name || '')}</span>
+                `;
+                if (href) {
+                    return `<a class="research-badge" href="${href}" target="_blank" rel="noopener noreferrer">${inner}</a>`;
+                }
+                return `<div class="research-badge">${inner}</div>`;
+            }).join('');
+
             card.innerHTML = `
-                <div class="research-status">${this.escapeHtml(item.status || '')}</div>
+                <div class="research-status">
+                    <span class="research-status-dot" aria-hidden="true"></span>
+                    <span>${this.escapeHtml(item.status || '')}</span>
+                </div>
                 <h3 class="research-paper-title">${this.escapeHtml(item.title || '')}</h3>
+                ${badges ? `<div class="research-badges" aria-label="Publication bodies">${badges}</div>` : ''}
                 <div class="research-meta">
                     ${item.venue ? `<p><strong>Venue:</strong> ${this.escapeHtml(item.venue)}</p>` : ''}
                     ${item.publication ? `<p><strong>Publication:</strong> ${this.escapeHtml(item.publication)}</p>` : ''}
